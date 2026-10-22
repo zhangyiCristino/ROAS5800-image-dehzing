@@ -1,9 +1,9 @@
-> Public repository edition: source images, saved output images and binary PDF/PPT are not redistributed. The measured summary/CSV is included; run the README workflow to regenerate the full evaluation record and image browser.
+> Public repository edition: eight processed saved example groups are included in `site/samples/`. The complete source/output image collections and binary PDF/PPT are not bundled. The measured summary/CSV is included; run the README workflow to regenerate the full evaluation record and full-test image browser.
 
 # 三种近期图像去雾方法的本机比较：参考报告
 
 > ROAS5800 Assignment 1；参考稿，供理解实验后修改使用。实验日期：2026-10-19。未填写姓名和学号。
-> 公开版只包含可编辑的参考文字；英文稿见 [report_en.md](report_en.md)。完整 PDF/PPT 与数据集照片保留在本地课程提交材料中。
+> 公开版包含可编辑的参考文字和 `site/samples/` 中的八组网页样例；英文稿见 [report_en.md](report_en.md)。完整 PDF/PPT 与全部数据图像保留在本地课程提交材料中。
 
 ## 摘要
 
@@ -75,7 +75,7 @@
 
 下面两个样例固定为原测试 ID `1-0010-02` 和 `1-0013-01`，用于说明界面实际处理的图像，不代表全部 352 对的视觉表现。比较应同时查看对比度、颜色、天空区域和建筑边缘，避免把更强的锐化或更高的饱和度直接等同于更准确恢复。
 
-公开仓库不分发数据集照片。复现评测后，可在 `results_full/images/` 或 UI 中查看上述两张图片。
+公开仓库的 `site/samples/` 包含八组已保存示例及三模型输出；完整结果图像可在复现评测后通过 `results_full/images/` 或 Gradio UI 查看。
 
 ### 结果应如何解释
 

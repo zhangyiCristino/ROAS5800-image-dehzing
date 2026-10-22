@@ -38,6 +38,7 @@ __pycache__/
 *.partial
 *.tmp
 *.zip
+!/site/samples/*/comparison.zip
 *.pth
 *.pt
 *.pk

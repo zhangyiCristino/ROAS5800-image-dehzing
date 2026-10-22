@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "source": {
+    "dataset": "RW2AH (Real-World Well-Aligned Haze), PGL-Net release",
+    "recorded_at_utc": "2026-10-19T10:21:29.444530+00:00",
+    "protocol": {
+      "max_side": 512,
+      "runs": 3,
+      "seed": 0
+    },
+    "note": "Previously computed local test results from the completed 352-pair evaluation. Loading a sample does not run a model or create simulated output.",
+    "timing_note": "gpu_ms is the median of three full forward GPU timings per image; peak_allocated_mib is the maximum tensor allocation across those runs.",
+    "evaluation_sha256": "9682e38ec44410685fcd07881526ca93b370473045fd17b888c91e90707ef266",
+    "dataset_manifest_sha256": "8ef6091b724b99e998988acd0001a2b1233087ac7bef7e4ca8bf634768896deb"
+  },
+  "samples": [
+    {
+      "id": "1-0010-02",
+      "label": "Sample 1",
+      "width": 512,
+      "height": 410,
+      "input": "samples/1-0010-02/input.png",
+      "reference": "samples/1-0010-02/reference.png",
+      "input_metrics": {
+        "psnr": 21.318727609632635,
+        "ssim": 0.6971655638146631,
+        "mae": 0.07356764606249006,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "c1fd23a3e0ea14351e4188141b304f96e590f64d16f4e90dc213f2e383c387f5"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/1-0010-02/pgl_net_t.png",
+          "psnr": 26.987751146971917,
+          "ssim": 0.756321054420564,
+          "mae": 0.03330510596006695,
+          "gpu_ms": 28.199935913085938,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "85c815685292cc1102ce27d2463abcf1bb05b71759ee693620fae5c94954bb08"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/1-0010-02/hndiff_focalnet.png",
+          "psnr": 26.521910705448448,
+          "ssim": 0.7719866650110377,
+          "mae": 0.03731854898971784,
+          "gpu_ms": 293.465087890625,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "a1ea38dd476676ced414d394cbc07bceccce6b7d28f9fc6e64f4c7109d27279c"
+        },
+        "PixRestore-S": {
+          "output": "samples/1-0010-02/pixrestore_s.png",
+          "psnr": 19.629375338095148,
+          "ssim": 0.6645940815028559,
+          "mae": 0.09340282759445241,
+          "gpu_ms": 92.97510528564453,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "1441e928ac5d202d07b376901715fe752e815d9cbf23738b088d606b2d85be64"
+        }
+      },
+      "download": "samples/1-0010-02/comparison.zip",
+      "reference_pixel_sha256": "1beeb0d1469f4451a12b36a28be2327b75ea41d4cbc0bd2207ef05a6a05e984f"
+    },
+    {
+      "id": "12-0002-05",
+      "label": "Typical example",
+      "width": 512,
+      "height": 410,
+      "input": "samples/12-0002-05/input.png",
+      "reference": "samples/12-0002-05/reference.png",
+      "input_metrics": {
+        "psnr": 23.28764099854441,
+        "ssim": 0.8497456454704656,
+        "mae": 0.04985154008249642,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "5eb9e6178cb65d5aa1178c60cc80917b40d479924bb36a2c0d5427d36732895c"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/12-0002-05/pgl_net_t.png",
+          "psnr": 26.76082801189731,
+          "ssim": 0.869233978748006,
+          "mae": 0.032481723507492434,
+          "gpu_ms": 28.418048858642578,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "bde88d13f107d4cc1f374d92c9f35f2cb54a01fcf115c13fac35c9815d683873"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/12-0002-05/hndiff_focalnet.png",
+          "psnr": 26.560227425479276,
+          "ssim": 0.8679473709211326,
+          "mae": 0.03312951463613902,
+          "gpu_ms": 443.82208251953125,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "05967d9426c12b61fc0916e7b16f1b136f17b602c9c10573844a244da04885cb"
+        },
+        "PixRestore-S": {
+          "output": "samples/12-0002-05/pixrestore_s.png",
+          "psnr": 23.07587004005836,
+          "ssim": 0.8190226984146443,
+          "mae": 0.05240043514865295,
+          "gpu_ms": 103.01542663574219,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "d5407e6d52bb3b6d6c632da0a4742228fb9dca2493b210239699eaa2706eb5c2"
+        }
+      },
+      "download": "samples/12-0002-05/comparison.zip",
+      "reference_pixel_sha256": "7283db2fd800d902c6f575da5af636c11211dc9fae3d8fba48cde9472a787114"
+    },
+    {
+      "id": "2-0019-03",
+      "label": "Challenging example",
+      "width": 512,
+      "height": 410,
+      "input": "samples/2-0019-03/input.png",
+      "reference": "samples/2-0019-03/reference.png",
+      "input_metrics": {
+        "psnr": 18.693295645358926,
+        "ssim": 0.7535084202602995,
+        "mae": 0.09581079128805993,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "bdaf322c7aaa8589701b3ba5d8c533b73e36d1cd3e376ff078bc69b9e1aa1387"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/2-0019-03/pgl_net_t.png",
+          "psnr": 16.31453094039498,
+          "ssim": 0.6896835287206547,
+          "mae": 0.13401762763032046,
+          "gpu_ms": 28.317920684814453,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "bdee9fd7b5e5d9478b74e9f4c561659408ff3219901d2da08c6714c874843db8"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/2-0019-03/hndiff_focalnet.png",
+          "psnr": 17.627358515259154,
+          "ssim": 0.7257921328870953,
+          "mae": 0.11215268437151282,
+          "gpu_ms": 267.536376953125,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "189fbfdf0b1041c3dadb786e90bc009be8ea520fb327c75374fbabc4bbc03ea6"
+        },
+        "PixRestore-S": {
+          "output": "samples/2-0019-03/pixrestore_s.png",
+          "psnr": 18.77461496702492,
+          "ssim": 0.7428700204955988,
+          "mae": 0.09231816913757374,
+          "gpu_ms": 90.26172637939453,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "4d81f306cad6d04a3b5c89bdb396a7fb8ba26fa895ce2b26f52c8245d7d77ca7"
+        }
+      },
+      "download": "samples/2-0019-03/comparison.zip",
+      "reference_pixel_sha256": "1ed5f022eae65e57a9a74265a373f4333d308124c3e708373305daca6d0e8933"
+    },
+    {
+      "id": "4-0005-07",
+      "label": "Sample 4",
+      "width": 512,
+      "height": 410,
+      "input": "samples/4-0005-07/input.png",
+      "reference": "samples/4-0005-07/reference.png",
+      "input_metrics": {
+        "psnr": 25.990414297537754,
+        "ssim": 0.9571590215583395,
+        "mae": 0.0422457481468197,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "887f89c1efd8d9570d9e6ffdd35839a521914753807a7705753f04aee89e0078"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/4-0005-07/pgl_net_t.png",
+          "psnr": 37.47338547730783,
+          "ssim": 0.9688118079506663,
+          "mae": 0.009322785897895744,
+          "gpu_ms": 29.248607635498047,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "93926672accc7ee7ecbfde38840a9a0daf5f1111b5ae74c341993eaf1372f6ef"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/4-0005-07/hndiff_focalnet.png",
+          "psnr": 34.1223183862494,
+          "ssim": 0.9697623764842241,
+          "mae": 0.014306732474493865,
+          "gpu_ms": 454.2893981933594,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "206dfef874f316e65ab4147fa26db2ef9c088f9af8fd2bfcd5e3857fcd153bb1"
+        },
+        "PixRestore-S": {
+          "output": "samples/4-0005-07/pixrestore_s.png",
+          "psnr": 24.435695675129484,
+          "ssim": 0.9393102772921345,
+          "mae": 0.04966129020205643,
+          "gpu_ms": 69.51091003417969,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "5b5aca95159983dcddeb5896aaba1b9b6aa37cdae5eca01b0839e44fca2abc5b"
+        }
+      },
+      "download": "samples/4-0005-07/comparison.zip",
+      "reference_pixel_sha256": "e9298bbd7ecca475747fcbf091b1a664f379666bef342737a06c98f732128bd1"
+    },
+    {
+      "id": "8-0016-01",
+      "label": "Sample 5",
+      "width": 512,
+      "height": 410,
+      "input": "samples/8-0016-01/input.png",
+      "reference": "samples/8-0016-01/reference.png",
+      "input_metrics": {
+        "psnr": 20.7952136853989,
+        "ssim": 0.6808653128221049,
+        "mae": 0.07483200571895424,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "97fae8a8345a0ba549e0fb4930f7dfc450579342ebe94f3259f6d41942f55147"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/8-0016-01/pgl_net_t.png",
+          "psnr": 25.21903754296386,
+          "ssim": 0.7335197214272937,
+          "mae": 0.038118119071815726,
+          "gpu_ms": 28.58380889892578,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "da99ad8663e4667d5ef1ca0e0f926fb140f04cc11adfd7376f92f21a41e00980"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/8-0016-01/hndiff_focalnet.png",
+          "psnr": 25.178514595167087,
+          "ssim": 0.7452289224129004,
+          "mae": 0.03943376499481907,
+          "gpu_ms": 246.57501220703125,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "99ff982e4bd897e7decb37bb7bbf0f944ddde775953894e7e05401b134ffbae1"
+        },
+        "PixRestore-S": {
+          "output": "samples/8-0016-01/pixrestore_s.png",
+          "psnr": 23.397442268246543,
+          "ssim": 0.6849044302116972,
+          "mae": 0.05048845872190339,
+          "gpu_ms": 69.78047943115234,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "29ad87be05f5a0168fe44613e7421dbf1b5944f48f9ff41a452e46ed8646667d"
+        }
+      },
+      "download": "samples/8-0016-01/comparison.zip",
+      "reference_pixel_sha256": "38e52b1a44260f5b8feb152080636124701751367e5ac257227486fbb7a06150"
+    },
+    {
+      "id": "9-0002-03",
+      "label": "Sample 6",
+      "width": 512,
+      "height": 410,
+      "input": "samples/9-0002-03/input.png",
+      "reference": "samples/9-0002-03/reference.png",
+      "input_metrics": {
+        "psnr": 16.693271136383213,
+        "ssim": 0.6252414235599333,
+        "mae": 0.11640551520404906,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "9e6a2e7c5eeb22954e8cbdf84b978ea9f0e59e017e8bb9320d350ac25deab6d7"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/9-0002-03/pgl_net_t.png",
+          "psnr": 19.53134141356842,
+          "ssim": 0.6808729025443876,
+          "mae": 0.07188035529252348,
+          "gpu_ms": 30.031871795654297,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "278dde7c42a5fbb7e181b8ed60e2c621e561367063e1a7bede52da15d4dbe231"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/9-0002-03/hndiff_focalnet.png",
+          "psnr": 18.68667018204466,
+          "ssim": 0.6683507861562227,
+          "mae": 0.08132745247489238,
+          "gpu_ms": 242.92044067382812,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "3aa84024449c44a9d1fd01668845781748284f9f4f711912646184f1352484f1"
+        },
+        "PixRestore-S": {
+          "output": "samples/9-0002-03/pixrestore_s.png",
+          "psnr": 17.344879358417483,
+          "ssim": 0.6166915239527966,
+          "mae": 0.10197419745337155,
+          "gpu_ms": 68.29484558105469,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "5b6af2583c3246e6a6182e6fbd22ad88db50b274f49352617200e85843c377fc"
+        }
+      },
+      "download": "samples/9-0002-03/comparison.zip",
+      "reference_pixel_sha256": "29a08b326f3444441849a791e4c4c61eabab9f8202258e6265876d437288536e"
+    },
+    {
+      "id": "10-0001-04",
+      "label": "Sample 7",
+      "width": 512,
+      "height": 410,
+      "input": "samples/10-0001-04/input.png",
+      "reference": "samples/10-0001-04/reference.png",
+      "input_metrics": {
+        "psnr": 19.603062406984144,
+        "ssim": 0.5936822731806478,
+        "mae": 0.08609447856886658,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "17e3ce7a199229a9d512b692643bee0ecf062fd4dd34daa021242d02e2fd9457"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/10-0001-04/pgl_net_t.png",
+          "psnr": 23.838763560445106,
+          "ssim": 0.7249207680484756,
+          "mae": 0.04924554514387054,
+          "gpu_ms": 27.97158432006836,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "c72c5b8328c2526f5ddd025b8242da2f721709203f55ae304d2f61c64c56113b"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/10-0001-04/hndiff_focalnet.png",
+          "psnr": 24.541144697680313,
+          "ssim": 0.7421654986710339,
+          "mae": 0.04663889387055635,
+          "gpu_ms": 233.34605407714844,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "f51f1807744147fbc08bd0e00ffba6c8bfd568934d027e6c54bf67837b703bef"
+        },
+        "PixRestore-S": {
+          "output": "samples/10-0001-04/pixrestore_s.png",
+          "psnr": 20.794676161764272,
+          "ssim": 0.6196184808598969,
+          "mae": 0.07509972052845533,
+          "gpu_ms": 65.63533020019531,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "69d39f3f6e22b0c430f1842fdb443ac0bd94ce450f35025e4759638a71323da2"
+        }
+      },
+      "download": "samples/10-0001-04/comparison.zip",
+      "reference_pixel_sha256": "34084ecf2c045385706550b157fcdfc202f0985f141f73abb0caa2afee2732be"
+    },
+    {
+      "id": "11-0001-02",
+      "label": "Sample 8",
+      "width": 512,
+      "height": 410,
+      "input": "samples/11-0001-02/input.png",
+      "reference": "samples/11-0001-02/reference.png",
+      "input_metrics": {
+        "psnr": 22.4216001303817,
+        "ssim": 0.8192259106804308,
+        "mae": 0.05886110986569423,
+        "gpu_ms": 0.0,
+        "peak_allocated_mib": 0.0,
+        "parameters": 0,
+        "seed": 0,
+        "runs": 0,
+        "precision": "uint8 input",
+        "output_pixel_sha256": "5eeafbdeca8fb5240274246e80a088b1e7b764372a9122931b1ff7afd678e53b"
+      },
+      "methods": {
+        "PGL-Net-T": {
+          "output": "samples/11-0001-02/pgl_net_t.png",
+          "psnr": 24.834067150048057,
+          "ssim": 0.852662495819899,
+          "mae": 0.04111377630320419,
+          "gpu_ms": 27.777023315429688,
+          "peak_allocated_mib": 175.81689453125,
+          "parameters": 780283,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "a81cb96eeaf5da3848609963be2f39b60ae89a52981d83324c55b883f1c4dd9f"
+        },
+        "HNDiff-FocalNet": {
+          "output": "samples/11-0001-02/hndiff_focalnet.png",
+          "psnr": 24.159349239092634,
+          "ssim": 0.855081142139411,
+          "mae": 0.04778120267415908,
+          "gpu_ms": 299.1595458984375,
+          "peak_allocated_mib": 271.49658203125,
+          "parameters": 14420392,
+          "seed": 0,
+          "runs": 3,
+          "precision": "float32",
+          "output_pixel_sha256": "74c4275fc09bcc06b21305fec37a2dac0989210dfac3f0fd2b42aeff3cc39334"
+        },
+        "PixRestore-S": {
+          "output": "samples/11-0001-02/pixrestore_s.png",
+          "psnr": 22.583574492663576,
+          "ssim": 0.8027447684985026,
+          "mae": 0.05413972207277221,
+          "gpu_ms": 65.1827163696289,
+          "peak_allocated_mib": 314.326171875,
+          "parameters": 53701997,
+          "seed": 0,
+          "runs": 3,
+          "precision": "bfloat16 autocast (float32 weights)",
+          "output_pixel_sha256": "07a75b7dfd256a9fcd55e1805fb2e766f3195f2c8b02f5fe54e3e0c86c01aa3f"
+        }
+      },
+      "download": "samples/11-0001-02/comparison.zip",
+      "reference_pixel_sha256": "b031395c9b260ac0ef483731bd8527e24c42bec7db0b2f8496d45bae99d4fc54"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 The original authors retain ownership of their model definitions, checkpoints and datasets. This repository contributes the shared inference adapters, evaluation, interface and assignment analysis. It does not claim authorship of PGL-Net, HNDiff, PixRestore, DINOv2 or RW2AH.
 
-The public Git repository does not bundle third-party model source trees, pretrained checkpoints, original dataset photos or image-bearing PDF/PPTX files. `scripts/prepare_assets.py` retrieves the model assets directly from their upstream sources and verifies their recorded hashes. The original local submission's source manifest is retained as a provenance record; statements in that historical manifest about files being “bundled” describe that local submission, not the lightweight Git checkout.
+The public Git repository does not bundle third-party model source trees, pretrained checkpoints, the complete dataset, or image-bearing PDF/PPTX files. It includes eight processed RW2AH test examples and their saved model outputs in `site/samples/`, with corresponding measurements and ZIP downloads for the assignment UI. `scripts/prepare_assets.py` retrieves the model assets directly from their upstream sources and verifies their recorded hashes. The original local submission's source manifest is retained as a provenance record; statements in that historical manifest about model files being “bundled” describe that local submission, not the Git checkout.
 
 ## Model sources
 
@@ -37,7 +37,7 @@ For PGL-Net, HNDiff and PixRestore, the original experiment used unpinned offici
 
 ## Dataset attribution
 
-RW2AH (Real-World Well-Aligned Haze) is associated with Fang et al.'s AAAI 2025 work: [author repository](https://github.com/fiwy0527/AAAI25_SGDN), [paper](https://arxiv.org/abs/2412.17496). The assignment uses the test split from the [archive linked by the PGL-Net authors](https://drive.google.com/file/d/1RmqMw-105j0Berybl8EAdRwVGlnfG3mT/view). It retains the source pairing and records file hashes in the dataset manifest. Original image files are fetched from that source rather than redistributed in this Git repository. Dataset use remains subject to the authors' applicable terms.
+RW2AH (Real-World Well-Aligned Haze) is associated with Fang et al.'s AAAI 2025 work: [author repository](https://github.com/fiwy0527/AAAI25_SGDN), [paper](https://arxiv.org/abs/2412.17496). The assignment uses the test split from the [archive linked by the PGL-Net authors](https://drive.google.com/file/d/1RmqMw-105j0Berybl8EAdRwVGlnfG3mT/view). It retains the source pairing and records file hashes in the dataset manifest. The website includes eight processed input/reference pairs and 24 corresponding restored outputs from that evaluation; the full original-resolution dataset is fetched from the author source. Sample IDs, original-run provenance and output pixel hashes are recorded in `site/samples/manifest.json`; each example ZIP includes attribution and run settings. No separate image-data redistribution license was identified in the inspected source. These examples are not assigned a new project license; dataset and image rights remain with their respective owners.
 
 ## Citation and project licensing
 

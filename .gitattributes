@@ -6,6 +6,7 @@
 *.ps1 text eol=crlf
 *.bat text eol=crlf
 *.png binary
+*.zip binary
 # Preserve original manifest bytes: their SHA-256 is part of the evaluation record.
 data/manifest.json -text
 data/manifest_full.json -text

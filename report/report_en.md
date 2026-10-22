@@ -1,4 +1,4 @@
-> Public repository edition: source images, saved output images and binary PDF/PPT are not redistributed. The measured summary/CSV is included; run the README workflow to regenerate the full evaluation record and image browser.
+> Public repository edition: eight processed saved example groups are included in `site/samples/`. The complete source/output image collections and binary PDF/PPT are not bundled. The measured summary/CSV is included; run the README workflow to regenerate the full evaluation record and full-test image browser.
 
 # Local Image Dehazing: Three Recent Pretrained Systems
 

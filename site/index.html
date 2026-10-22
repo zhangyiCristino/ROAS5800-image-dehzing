@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ROAS5800 Assignment 1 — single-image dehazing comparison interface.">
+  <meta name="theme-color" content="#f4f7f6">
+  <title>Image Dehazing Comparison · ROAS5800</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div class="heading-group"><span class="app-icon" aria-hidden="true"><i></i><i></i><i></i></span><div><h1>Image Dehazing Comparison</h1><p>Upload a hazy image and compare three restoration methods.</p></div></div>
+      <div class="header-meta"><span>ROAS5800 · Assignment 1</span><span class="preview-badge"><i aria-hidden="true"></i> UI preview</span></div>
+    </header>
+    <section class="input-panel" aria-labelledby="input-title">
+      <div class="input-column">
+        <div class="panel-heading"><h2 id="input-title">Input image</h2><span>PNG, JPG or WebP · up to 32 MB</span></div>
+        <input type="file" id="hazy-file" accept="image/png,image/jpeg,image/webp" hidden>
+        <div id="hazy-dropzone" class="dropzone" role="button" tabindex="0" aria-label="Upload hazy image" aria-describedby="hazy-meta">
+          <div id="hazy-placeholder" class="upload-placeholder"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="5" width="24" height="22" rx="4"/><circle cx="11" cy="12" r="2"/><path d="m5 23 7-7 5 5 4-4 6 6"/></svg><strong>Drop a hazy image here</strong><span>or click to upload</span></div>
+          <img id="hazy-preview" class="uploaded-image" alt="Uploaded hazy input" hidden>
+        </div>
+        <div class="file-meta"><p id="hazy-meta">No image selected</p><button type="button" id="clear-hazy" class="text-button" hidden>Remove</button></div>
+        <details class="reference-input"><summary><span>Clean reference <span class="optional">optional</span></span><span class="expand-icon" aria-hidden="true">+</span></summary><div class="reference-content"><p>Add an aligned clear image of the same size to enable PSNR and SSIM after inference.</p><input type="file" id="reference-file" accept="image/png,image/jpeg,image/webp" hidden><div id="reference-dropzone" class="dropzone reference-dropzone" role="button" tabindex="0" aria-label="Upload clean reference" aria-describedby="reference-meta"><div id="reference-placeholder" class="upload-placeholder"><span>Drop a clean reference here, or click to upload</span></div><img id="reference-preview" class="uploaded-image" alt="Uploaded clean reference" hidden></div><div class="file-meta"><p id="reference-meta">No reference selected</p><button type="button" id="clear-reference" class="text-button" hidden>Remove</button></div><p id="reference-warning" class="reference-warning" role="alert" hidden></p></div></details>
+      </div>
+      <div class="settings-column">
+        <div class="panel-heading"><h2>Methods</h2><span id="selection-count">3 selected</span></div>
+        <fieldset class="method-options"><legend class="visually-hidden">Choose dehazing methods</legend><label class="method-option"><input type="checkbox" name="method" value="PGL-Net-T" checked><span class="method-name">PGL-Net-T</span></label><label class="method-option"><input type="checkbox" name="method" value="HNDiff-FocalNet" checked><span class="method-name">HNDiff-FocalNet</span></label><label class="method-option"><input type="checkbox" name="method" value="PixRestore-S" checked><span class="method-name">PixRestore-S</span></label></fieldset>
+        <div class="size-control"><label for="max-side">Maximum image side</label><select id="max-side"><option value="256">256 px</option><option value="512" selected>512 px</option></select></div><p class="size-hint">Preserves aspect ratio. Smaller images run faster.</p>
+        <div class="action-row"><button type="button" id="compare-button" class="button primary" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 8 6-8 6Z"/></svg> Compare methods</button><button type="button" id="reset-button" class="button secondary">Reset</button></div>
+        <div class="preview-note" id="preview-note"><span class="info-icon" aria-hidden="true">i</span><p>Saved samples show recorded results. New uploads are preview only.</p></div>
+      </div>
+    </section>
+    <section class="sample-section" aria-labelledby="sample-title">
+      <div class="sample-heading"><h2 id="sample-title">Real test samples</h2><p id="sample-note">Loading saved examples…</p></div>
+      <div id="sample-list" class="sample-list" aria-label="Choose a saved test sample"></div>
+    </section>
+    <p id="status-message" class="status-message" role="status" aria-live="polite">Upload an image to prepare a comparison. No model results have been generated.</p>
+    <section class="results-section" aria-labelledby="results-title">
+      <div class="section-heading"><h2 id="results-title">Before & after</h2><p>Drag each divider to compare the input and output.</p></div>
+      <div class="output-grid">
+        <article class="output-card" data-method="PGL-Net-T"><div class="output-heading"><h3><i class="method-dot pgl" aria-hidden="true"></i>PGL-Net-T</h3><span class="output-status">Waiting for input</span></div><div class="output-body" style="--divider:50%"><img class="after-image" alt="Saved model output" hidden><div class="comparison-empty"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="5" y="6" width="22" height="20" rx="3"/><path d="m6 23 7-7 5 5 4-4 4 5"/></svg><span>No output yet</span></div><div class="comparison-input"><img class="before-image" alt="PGL-Net-T input preview" hidden><span class="input-placeholder">Input</span></div><span class="side-label before-label">Before</span><span class="side-label after-label">After</span><div class="divider-line" aria-hidden="true"><span>↔</span></div><input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="PGL-Net-T before and after divider" disabled></div></article>
+        <article class="output-card" data-method="HNDiff-FocalNet"><div class="output-heading"><h3><i class="method-dot hndiff" aria-hidden="true"></i>HNDiff-FocalNet</h3><span class="output-status">Waiting for input</span></div><div class="output-body" style="--divider:50%"><img class="after-image" alt="Saved model output" hidden><div class="comparison-empty"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="5" y="6" width="22" height="20" rx="3"/><path d="m6 23 7-7 5 5 4-4 4 5"/></svg><span>No output yet</span></div><div class="comparison-input"><img class="before-image" alt="HNDiff-FocalNet input preview" hidden><span class="input-placeholder">Input</span></div><span class="side-label before-label">Before</span><span class="side-label after-label">After</span><div class="divider-line" aria-hidden="true"><span>↔</span></div><input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="HNDiff-FocalNet before and after divider" disabled></div></article>
+        <article class="output-card" data-method="PixRestore-S"><div class="output-heading"><h3><i class="method-dot pix" aria-hidden="true"></i>PixRestore-S</h3><span class="output-status">Waiting for input</span></div><div class="output-body" style="--divider:50%"><img class="after-image" alt="Saved model output" hidden><div class="comparison-empty"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="5" y="6" width="22" height="20" rx="3"/><path d="m6 23 7-7 5 5 4-4 4 5"/></svg><span>No output yet</span></div><div class="comparison-input"><img class="before-image" alt="PixRestore-S input preview" hidden><span class="input-placeholder">Input</span></div><span class="side-label before-label">Before</span><span class="side-label after-label">After</span><div class="divider-line" aria-hidden="true"><span>↔</span></div><input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="PixRestore-S before and after divider" disabled></div></article>
+      </div>
+    </section>
+    <section class="metrics-section" aria-labelledby="metrics-title"><div class="section-heading"><h2 id="metrics-title">Comparison metrics</h2><p>Quality metrics require an aligned clean reference.</p></div><div class="table-wrap"><table><caption class="visually-hidden">Selected methods, image size, inference cost and quality metrics</caption><thead><tr><th scope="col">Method</th><th scope="col">Image size</th><th scope="col">Inference <span>ms</span></th><th scope="col">Memory <span>MiB</span></th><th scope="col">PSNR <span>dB ↑</span></th><th scope="col">SSIM <span>↑</span></th></tr></thead><tbody id="metrics-body"><tr><td>PGL-Net-T</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>HNDiff-FocalNet</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>PixRestore-S</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div><div class="download-row"><span id="download-note">Select a saved sample to download its recorded comparison.</span><button type="button" id="download-button" class="button secondary" title="Available after a completed comparison" disabled><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v10m-4-4 4 4 4-4M4 14v3h12v-3"/></svg> Download comparison <span class="zip-label">ZIP</span></button></div></section>
+  </main>
+</body>
+</html>
