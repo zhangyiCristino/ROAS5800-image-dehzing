@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "dataset_pairs": 352,
+  "source_images_hash_checked": 704,
+  "saved_result_images_checked": 1408,
+  "recomputed_quality_records": 20,
+  "source_and_checkpoint_files_checked": 41,
+  "all_methods_complete": [
+    "HNDiff-FocalNet",
+    "PGL-Net-T",
+    "PixRestore-S",
+    "Untreated"
+  ],
+  "scope": "Checks source/data integrity, complete output coverage, saved-pixel hashes, sample metric recomputation and full aggregate consistency. Does not imply paper-score reproduction."
+}

@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "description": "Author-hosted runtime assets; not redistributed by this repository. Exact size and SHA-256 reproduce the original local experiment.",
+  "provenance": {
+    "original_source_manifest_sha256": "c006bc4d32d0c54677f7c38824424b54571be1972bcad5b47527d1f69c391191",
+    "original_snapshot_date": "2026-10-19",
+    "upstream_validation_date": "2026-10-22",
+    "revision_note": "Original PGL/HNDiff/PixRestore snapshots were not commit-pinned at retrieval. The audited upstream revisions below were subsequently verified to reproduce the recorded file hashes; do not describe them as proven original retrieval commits.",
+    "source_revisions": {
+      "pgl_net": {
+        "repository": "https://github.com/sc-30-bit/PGL-Net",
+        "audited_revision": "dfb418adf6fd2dd55ad6f4bec72128f618d50eeb",
+        "license_status": "No LICENSE file in verified official tree. Official README retained; no license invented."
+      },
+      "hndiff": {
+        "repository": "https://github.com/Jin-Ting-He/HNDiff",
+        "audited_revision": "d5f2385dae1f4de80f7192d9edd73947ddcbecd5",
+        "license_status": "No LICENSE file in verified official tree. Official README retained; no license invented."
+      },
+      "pixrestore": {
+        "repository": "https://github.com/csslc/PixRestore",
+        "audited_revision": "909ca06e614cf72e218d52b4fa41077c603d872b",
+        "license_status": "Official README and Hugging Face model card declare Apache-2.0; repository LICENSE link was unavailable in audited tree. README retained."
+      },
+      "dinov2": {
+        "repository": "https://github.com/facebookresearch/dinov2",
+        "audited_revision": "7764ea0",
+        "license_status": "Apache-2.0; original LICENSE bundled."
+      }
+    },
+    "pixrestore_huggingface_revision": "a5fe719a0c517422cff9f7a4895ab303e2320d51",
+    "source_validation": "All 28 runtime source/LICENSE URLs were downloaded and verified against the original byte sizes and hashes (HNDiff only after its documented text adaptation). The small PixRestore config was also downloaded and verified. Large checkpoint URLs derive from author links; their byte sizes and SHA-256 were verified against the original local cache, without re-downloading large weights.",
+    "hndiff_transform": "Replace the single unused from thop import profile line with the exact explanatory comment from the local experiment; ensure a trailing LF. No numerical forward operation is changed."
+  },
+  "files": [
+    {
+      "path": "third_party/dinov2/dinov2/__init__.py",
+      "bytes": 218,
+      "sha256": "0d2b87b7e71c7f7279ccc4b4f8b541d26071425284a0ea01a5a435fac4511cfe",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/__init__.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/__init__.py",
+      "bytes": 498,
+      "sha256": "1b55deed39d5ab0b589bef421bbfe06f24a10cd590a0f8403234c9ee4e34109d",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/__init__.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/attention.py",
+      "bytes": 3298,
+      "sha256": "79c7be7a452b3aad96698ec38d5d5150b9f4d8ac084fa93324510dc9f624775d",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/attention.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/block.py",
+      "bytes": 11609,
+      "sha256": "60c0ac7dfa4474be313fabfa5a23d82faf6f0cecd4e720a88be35de9788cb636",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/block.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/dino_head.py",
+      "bytes": 2007,
+      "sha256": "9fdb1fa61c0609dc0876f711f9d0d828c33bf9fd972aab3d9c968d44e16b98d1",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/dino_head.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/drop_path.py",
+      "bytes": 1157,
+      "sha256": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/drop_path.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/layer_scale.py",
+      "bytes": 1097,
+      "sha256": "dadd5aafe178f1bf72a205a02a6645c7e635cacbad585d4a7369c200c6e89135",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/layer_scale.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/mlp.py",
+      "bytes": 1269,
+      "sha256": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/mlp.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/patch_embed.py",
+      "bytes": 2829,
+      "sha256": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/patch_embed.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/swiglu_ffn.py",
+      "bytes": 3200,
+      "sha256": "e46d2948fb97e497cf991ff82ce30cb59b59fdf2e12a19568417113716b4f119",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/layers/swiglu_ffn.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/models/__init__.py",
+      "bytes": 1574,
+      "sha256": "b93329ce676f3eb0c9a7790d1b3b2b114a0855ea8dc76e32e262d1a7dc6c55ae",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/models/__init__.py"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/models/vision_transformer.py",
+      "bytes": 16438,
+      "sha256": "7799a260f2d7d0fe197331d08502fb8c542f9b7424723650f6a39b64fa2639ea",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/dinov2/models/vision_transformer.py"
+    },
+    {
+      "path": "third_party/dinov2/LICENSE",
+      "bytes": 11359,
+      "sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+      "vendor": "dinov2",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/facebookresearch/dinov2/7764ea0/LICENSE"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/FocalNetPrior.py",
+      "bytes": 10115,
+      "sha256": "1f381e3c1cffe721f5f52cc0b63337656b5faa0ea02ae959e481b91f3a557009",
+      "vendor": "hndiff",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/Jin-Ting-He/HNDiff/d5f2385dae1f4de80f7192d9edd73947ddcbecd5/src/FocalNet/model/FocalNetPrior.py",
+      "transform": "hndiff_unused_thop_comment_lf"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/HazeDiffusionUnet.py",
+      "bytes": 26900,
+      "sha256": "7664e602d7e4c53fc9d4003f7b50773f9d64e45097324fea09e3061e29f9ac75",
+      "vendor": "hndiff",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/Jin-Ting-He/HNDiff/d5f2385dae1f4de80f7192d9edd73947ddcbecd5/src/FocalNet/model/HazeDiffusionUnet.py",
+      "transform": "hndiff_unused_thop_comment_lf"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/LatentEncoder.py",
+      "bytes": 9144,
+      "sha256": "47da7da06c28b6768c0278b4355fc14b89bea91efd1f7f9c7d4853ab5e04626a",
+      "vendor": "hndiff",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/Jin-Ting-He/HNDiff/d5f2385dae1f4de80f7192d9edd73947ddcbecd5/src/FocalNet/model/LatentEncoder.py",
+      "transform": "hndiff_unused_thop_comment_lf"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/layers.py",
+      "bytes": 2957,
+      "sha256": "e34e1300c298e36a9c001e5a54e2d13be24b713aac58318870232fded1de9cd9",
+      "vendor": "hndiff",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/Jin-Ting-He/HNDiff/d5f2385dae1f4de80f7192d9edd73947ddcbecd5/src/FocalNet/model/layers.py"
+    },
+    {
+      "path": "third_party/pgl_net/PGLNet.py",
+      "bytes": 8823,
+      "sha256": "85b4f94967555ee55d8536408109a77f7565c6ac2ada4bc7dd8992b04a5ef4d7",
+      "vendor": "pgl_net",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/sc-30-bit/PGL-Net/dfb418adf6fd2dd55ad6f4bec72128f618d50eeb/models/PGLNet.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/__init__.py",
+      "bytes": 339,
+      "sha256": "562150ba920bbd1b64b6f07baa0d6ffc3fd66cad295b0505bb871e04f7cbb257",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/__init__.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/flow.py",
+      "bytes": 19566,
+      "sha256": "4212987fd6514494ec45fd7315d0a2be1b263ffadcde4ce2492f4266eb37f9ae",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/flow.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/__init__.py",
+      "bytes": 94,
+      "sha256": "57ee7934e076c58027fec3a889d026c00e8e41b96a60e830b3094b94199a4b41",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/__init__.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/layers.py",
+      "bytes": 10871,
+      "sha256": "8936ccec1c77fbc13ee31e892ebd5b399e6150da2035d3dbfae9865429cefcf3",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/layers.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/patch_embed.py",
+      "bytes": 1775,
+      "sha256": "28b0b670ff05d8d47d5258847493ca4cc10cd34407e166f86b62ced605b42bdc",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/patch_embed.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/pixel_dit.py",
+      "bytes": 22357,
+      "sha256": "4bf20b499144b9d10c7cc01b9499170714ea1c8f5305a1f4083c867eaf7da6d3",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/pixel_dit.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/rms_norm.py",
+      "bytes": 469,
+      "sha256": "009c3df874c72f68db08e6ac1a2199213605d62918b7488a697102eb24ac65f5",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/rms_norm.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/rope.py",
+      "bytes": 2727,
+      "sha256": "7b73661b9efa16a538079d55795641e0aed2dab5e05e71ab6be7675349a91c06",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/rope.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/swiglu.py",
+      "bytes": 884,
+      "sha256": "2f5824e2dc9c2c8911a61ae3e62819590804a9c4dd00ea03f0979744de374abb",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/models/swiglu.py"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/vision.py",
+      "bytes": 3166,
+      "sha256": "81cca0775440f1b0f4069ea148589ad04ef57b52412e1585c0603f5dc8afaa40",
+      "vendor": "pixrestore",
+      "kind": "source",
+      "url": "https://raw.githubusercontent.com/csslc/PixRestore/909ca06e614cf72e218d52b4fa41077c603d872b/pixrestore/vision.py"
+    },
+    {
+      "path": "checkpoints/hndiff/final_dm_FocalNet.pth",
+      "bytes": 41509098,
+      "sha256": "144c6b5949b99fb34d90c04138c3555f32ddc0d7b2607d7c7476c8dbb67bfb42",
+      "kind": "checkpoint",
+      "drive_file_id": "1O9fH0TEcFYvF0F4z_4mUfGW04pFyQZkX",
+      "url": "https://drive.google.com/uc?export=download&id=1O9fH0TEcFYvF0F4z_4mUfGW04pFyQZkX"
+    },
+    {
+      "path": "checkpoints/hndiff/final_FocalNet.pth",
+      "bytes": 16498860,
+      "sha256": "ed02d0ad8bf9f3cbdb14ca40678fe0cc3b4fa011085de4ce86958786363e9d27",
+      "kind": "checkpoint",
+      "drive_file_id": "1nDfqcpiX0KQ3gri9mqlNuY_TjMBf5c-Q",
+      "url": "https://drive.google.com/uc?export=download&id=1nDfqcpiX0KQ3gri9mqlNuY_TjMBf5c-Q"
+    },
+    {
+      "path": "checkpoints/pgl_net/rw2ah_pglnet_t.pk",
+      "bytes": 5833055,
+      "sha256": "1ea04c0d993cc2e5aa6a36a6c77f5ac7719d4faa1fede551c3bc8db23f89526e",
+      "kind": "checkpoint",
+      "drive_file_id": "1Sl7cCSK3peAeOzEXWvv2_3m9cJFvrvJx",
+      "url": "https://drive.google.com/uc?export=download&id=1Sl7cCSK3peAeOzEXWvv2_3m9cJFvrvJx"
+    },
+    {
+      "path": "checkpoints/pixrestore/config.json",
+      "bytes": 2281,
+      "sha256": "978deb1b0aaa544c12355ffb8ffffee1fbf012493de876736aba2c32185d18f4",
+      "kind": "checkpoint",
+      "url": "https://huggingface.co/VCLab-PolyU/PixRestore/resolve/a5fe719a0c517422cff9f7a4895ab303e2320d51/pixrestore-s/config.json"
+    },
+    {
+      "path": "checkpoints/pixrestore/dinov2_vits14_pretrain.pth",
+      "bytes": 88283115,
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+      "kind": "checkpoint",
+      "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth"
+    },
+    {
+      "path": "checkpoints/pixrestore/ema_model.safetensors",
+      "bytes": 128709340,
+      "sha256": "13c10ca30fa865977de393457e731db9f2469159dbd69c85fb3c79b3edf06895",
+      "kind": "checkpoint",
+      "url": "https://huggingface.co/VCLab-PolyU/PixRestore/resolve/a5fe719a0c517422cff9f7a4895ab303e2320d51/pixrestore-s/ema_model.safetensors"
+    }
+  ]
+}

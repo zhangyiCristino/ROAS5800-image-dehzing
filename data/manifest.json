@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "dataset": "RW2AH (Real-World Well-Aligned Haze), PGL-Net release",
+  "split": "test",
+  "selection": {
+    "rule": "First N pairs sorted lexicographically by the original test hazy ZIP member name; selected before model inference",
+    "count": 12,
+    "hazy_test_count": 352,
+    "clear_test_count": 352,
+    "paired_test_count": 352,
+    "seed": null,
+    "is_full_benchmark": false
+  },
+  "sources": {
+    "dataset_authors_repository": "https://github.com/fiwy0527/AAAI25_SGDN",
+    "dataset_paper": "https://arxiv.org/abs/2412.17496",
+    "download_link_provenance": "https://github.com/sc-30-bit/PGL-Net",
+    "official_model_authors_data_folder": "https://drive.google.com/drive/folders/1iZZq8k6Jb7CtFT9uYi96F8TZht2d3b3O",
+    "archive_url": "https://drive.google.com/file/d/1RmqMw-105j0Berybl8EAdRwVGlnfG3mT/view",
+    "archive_drive_file_id": "1RmqMw-105j0Berybl8EAdRwVGlnfG3mT",
+    "archive_filename": "RW2AH.zip",
+    "archive_size_bytes": 1890248044
+  },
+  "license_note": "Dataset is publicly released for research by its creators and linked by the model authors. No separate image-data license was identified in the inspected download/README. Do not infer that the SGDN code Apache-2.0 license licenses third-party webcam imagery. Retain attribution and obtain permission before broader redistribution or commercial reuse.",
+  "pairs": [
+    {
+      "id": "1-0010-02",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0010-02.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0010-02.png",
+        "bytes": 567641,
+        "sha256": "cbb5c64d91b3f42db1abbbc2deeed3dcd9c8ec69ff3391b09023baeac00fe49e",
+        "zip_crc32": "8b99594e",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0010-02.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0010-02.png",
+        "bytes": 675064,
+        "sha256": "319836f13b85afff0fe0e75d5a97e429cb716a2c9dbd3d27d018f1a467b760f8",
+        "zip_crc32": "75125dbc",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0013-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0013-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0013-01.png",
+        "bytes": 310839,
+        "sha256": "dc215a3ac93afbd34e70cad4daac32b44955c2609f6e6b52f9fa0137d073de04",
+        "zip_crc32": "174311cd",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0013-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0013-01.png",
+        "bytes": 657678,
+        "sha256": "72847fbaa0ae594740c3aab288e98cae8586e5796a58c11e40e08ee6100ece22",
+        "zip_crc32": "f4ee35e6",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0014-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0014-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0014-01.png",
+        "bytes": 765885,
+        "sha256": "0bec03613bb4e42ebdc9b3b9d64d42e908de34ad8dc73c7085a6425f934c2fb0",
+        "zip_crc32": "22db9f42",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0014-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0014-01.png",
+        "bytes": 897014,
+        "sha256": "7d7a5b7144739391c4914b90f4a826225649d04ea46990e5b4792ba448c3363f",
+        "zip_crc32": "772d1cbb",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0017-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0017-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0017-01.png",
+        "bytes": 481849,
+        "sha256": "15ffe00441ab2b00aa63dfd7082603fdd9cc4e3a041decaee799e3df6cf474c4",
+        "zip_crc32": "43f785f3",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0017-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0017-01.png",
+        "bytes": 915343,
+        "sha256": "f58c5addcfcf5d2dcf23a2b47c5b2060989758d53b6d48790b1bb29196982f2e",
+        "zip_crc32": "656da492",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0018-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0018-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0018-01.png",
+        "bytes": 545739,
+        "sha256": "f832da39cb9acc9f4058f8f5fe2fe33dce5dce4c1976dec0bc05ab956f304ba6",
+        "zip_crc32": "407af3f4",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0018-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0018-01.png",
+        "bytes": 923074,
+        "sha256": "a5700987c68013ff52a581b1a5f48d5ae5d6e6b48873132ee35f07f49c0cf469",
+        "zip_crc32": "6d82e436",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0020-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0020-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0020-01.png",
+        "bytes": 525429,
+        "sha256": "0ccc677f6088bb63a5f598d6fa6c05de23cb35a5c8b6a0e7dcbf540a02cd7fb3",
+        "zip_crc32": "74adfd74",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0020-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0020-01.png",
+        "bytes": 912931,
+        "sha256": "73750c70a622561b3025f46eda97edc5cd4c96669919ea74749094f12243f1c5",
+        "zip_crc32": "1f49f7a2",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0026-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0026-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0026-01.png",
+        "bytes": 461008,
+        "sha256": "c2b200aa87793fc822fe74c19a6b6962139153a3d2a30e9d30cfc099f9173448",
+        "zip_crc32": "26f57192",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0026-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0026-01.png",
+        "bytes": 885680,
+        "sha256": "a95cffc34648722a1e8bca0f63cb66d6b71b1fdb84b7258b014fc37586640640",
+        "zip_crc32": "4b71b746",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0029-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0029-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0029-01.png",
+        "bytes": 391953,
+        "sha256": "f8b52433e851d8d53ece377390861677381a92dc22d446e7add80850680b8165",
+        "zip_crc32": "e1fb0045",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0029-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0029-01.png",
+        "bytes": 873280,
+        "sha256": "2e836e137383ba852e5ce4aba819c30794c00f52e47dd13865f1f6a4883c423c",
+        "zip_crc32": "5e11b41f",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0030-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0030-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0030-01.png",
+        "bytes": 270213,
+        "sha256": "e09ddc5eac3bc53ff008c08de3281a3ef034c5c92f4a1836870fc7d20cfa5443",
+        "zip_crc32": "33eec1a8",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0030-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0030-01.png",
+        "bytes": 786322,
+        "sha256": "4f1a0e9921b66d7d3f0557ec10ab47fc5550a81aba2c4d0c1cb662f9bbcf113d",
+        "zip_crc32": "6a340145",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0033-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0033-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0033-01.png",
+        "bytes": 438466,
+        "sha256": "4befce5ae718a668e209efbd0edfb836ba036c5dff10f6b425dd9cdd0e7e5ad4",
+        "zip_crc32": "41784a09",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0033-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0033-01.png",
+        "bytes": 868038,
+        "sha256": "2d4d3274e830c00a53e0ce0fcbc507efeb9efba847861ae6ebd68bf584a19f55",
+        "zip_crc32": "dcf0ee3f",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0035-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0035-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0035-01.png",
+        "bytes": 738594,
+        "sha256": "291038ad93f2fa6f5b9494f2eb29bd8dc4204b50bff47ce60470652476d652c4",
+        "zip_crc32": "577f0382",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0035-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0035-01.png",
+        "bytes": 929878,
+        "sha256": "ba35cc323d2be1e2dcca3fca4f6ba22f69ebb57d257dfe0fe1c64b6be6ee4dcd",
+        "zip_crc32": "b6a2a324",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "id": "1-0038-01",
+      "split": "test",
+      "hazy": "data/rw2ah_test12/hazy/1-0038-01.png",
+      "hazy_source": {
+        "archive_member": "RW2AH/test/input/1-0038-01.png",
+        "bytes": 702857,
+        "sha256": "618ed948f54967daf77c25a3ad3ba670546dd025c99a097053e0280be7817fcd",
+        "zip_crc32": "b0e39e74",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGB"
+      },
+      "clear": "data/rw2ah_test12/clear/1-0038-01.png",
+      "clear_source": {
+        "archive_member": "RW2AH/test/gt/1-0038-01.png",
+        "bytes": 879165,
+        "sha256": "957681d2953ea7f5d321da1783ccb31d830b3251ed8b20c2115dfac2af82fb52",
+        "zip_crc32": "ec29e482",
+        "size_wh": [
+          640,
+          512
+        ],
+        "mode": "RGBA"
+      }
+    }
+  ],
+  "downloaded_bytes_this_run": 16717358
+}

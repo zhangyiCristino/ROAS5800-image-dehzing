@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "scope": "Checks of the lightweight public repository; the original 352-pair measurements are retained, not rerun for publication.",
+  "cpu_contract_tests": {
+    "passed": 8,
+    "skipped": 1,
+    "skip_reason": "The full evaluation image browser requires locally generated images excluded from the public repository."
+  },
+  "asset_preparation_tests": {
+    "passed": 6,
+    "author_hosted_source_and_license_downloads_verified": 28,
+    "author_hosted_config_downloads_verified": 1,
+    "all_assets_verified_from_original_local_cache": 34,
+    "large_checkpoints_redownloaded": false
+  },
+  "fresh_checkout_ui_build": "passed; missing saved full-evaluation images handled explicitly",
+  "prepared_model_smoke_inference": {
+    "status": "passed",
+    "methods": ["PGL-Net-T", "HNDiff-FocalNet", "PixRestore-S"],
+    "output_shape_hwc": [102, 128, 3],
+    "dtype": "uint8",
+    "scope": "One small-image forward per model verifies the prepared source/import/checkpoint integration; this is not a replacement quality or timing benchmark."
+  },
+  "published_metric_rows_verified": 1408,
+  "published_pairs_per_method": 352,
+  "summary_means_recomputed_from_csv": true,
+  "original_dataset_manifest_byte_hash_preserved": true,
+  "original_source_manifest_byte_hash_preserved": true,
+  "private_path_and_secret_pattern_scan": "passed"
+}

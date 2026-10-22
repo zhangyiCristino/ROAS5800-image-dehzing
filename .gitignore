@@ -1,0 +1,54 @@
+# Local environments, caches and credentials
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Downloaded third-party assets (retain only the provenance manifest)
+/third_party/*
+!/third_party/SOURCE_MANIFEST.json
+/checkpoints/
+
+# Dataset photographs (retain source/pair manifests)
+/data/*
+!/data/manifest.json
+!/data/manifest_full.json
+
+# Reproduced outputs; retain only the original published numerical records
+/results_full/*
+!/results_full/summary.json
+!/results_full/summary.csv
+!/results_full/per_image.csv
+!/results_full/validation.json
+!/results_full/evaluation_audit.json
+/results/
+/results_pilot/
+/outputs/
+/tmp/
+/logs/
+*.log
+*.partial
+*.tmp
+*.zip
+*.pth
+*.pt
+*.pk
+*.safetensors
+*.pdf
+*.pptx
+PACKAGE_MANIFEST.json
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

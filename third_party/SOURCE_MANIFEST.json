@@ -1,0 +1,329 @@
+{
+  "retrieval_date": "2026-10-19",
+  "purpose": "Offline course-assignment released-system inference. Exact vendored-source and checkpoint integrity record.",
+  "repositories": {
+    "pgl_net": {
+      "repository": "https://github.com/sc-30-bit/PGL-Net",
+      "paper": "https://arxiv.org/abs/2606.25732",
+      "revision": "Unpinned official main snapshot retrieved 2026-10-19; exact local hashes below.",
+      "changes": [
+        "PGLNet.py copied unchanged.",
+        "Training/data wrappers replaced by common local inference backend."
+      ],
+      "license": "No LICENSE file in verified official tree. Official README retained; no license invented."
+    },
+    "hndiff": {
+      "repository": "https://github.com/Jin-Ting-He/HNDiff",
+      "paper": "https://arxiv.org/abs/2608.10995",
+      "revision": "Unpinned official main snapshot retrieved 2026-10-19; exact local hashes below.",
+      "changes": [
+        "Only unused from thop import profile imports removed from FocalNetPrior.py, HazeDiffusionUnet.py, LatentEncoder.py.",
+        "Original numerical forward and four-step reverse schedule preserved.",
+        "Common full-image inference replaces official 384-pixel overlapping-patch evaluation wrapper."
+      ],
+      "license": "No LICENSE file in verified official tree. Official README retained; no license invented."
+    },
+    "pixrestore": {
+      "repository": "https://github.com/csslc/PixRestore",
+      "paper": "https://arxiv.org/abs/2608.16793",
+      "revision": "Unpinned official main snapshot retrieved 2026-10-19; exact local hashes below.",
+      "changes": [
+        "Original flow, model and vision modules copied unchanged.",
+        "Backend reproduces official build_model/build_flow architecture arguments and feature traversal; safetensors loaded strictly.",
+        "No call to original vision.load_dinov2 or its torch.hub/fallback loader. DINO architecture built locally with original hub construction arguments.",
+        "TORCH_COMPILE_DISABLE=1 disables optional compilation decorators, XFORMERS_DISABLED=1 selects original PyTorch fallback."
+      ],
+      "license": "Official README and Hugging Face model card declare Apache-2.0; repository LICENSE link was unavailable in audited tree. README retained."
+    },
+    "dinov2": {
+      "repository": "https://github.com/facebookresearch/dinov2",
+      "paper": "https://arxiv.org/abs/2304.07193",
+      "revision": "7764ea0",
+      "changes": [
+        "Minimal original models/layers import closure, original package init files, README and LICENSE copied unchanged.",
+        "No torch.hub entry point or remote download code is used by backend."
+      ],
+      "license": "Apache-2.0; original LICENSE bundled."
+    }
+  },
+  "source_files": [
+    {
+      "path": "third_party/dinov2/dinov2/__init__.py",
+      "bytes": 218,
+      "sha256": "0d2b87b7e71c7f7279ccc4b4f8b541d26071425284a0ea01a5a435fac4511cfe",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/__init__.py",
+      "bytes": 498,
+      "sha256": "1b55deed39d5ab0b589bef421bbfe06f24a10cd590a0f8403234c9ee4e34109d",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/attention.py",
+      "bytes": 3298,
+      "sha256": "79c7be7a452b3aad96698ec38d5d5150b9f4d8ac084fa93324510dc9f624775d",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/block.py",
+      "bytes": 11609,
+      "sha256": "60c0ac7dfa4474be313fabfa5a23d82faf6f0cecd4e720a88be35de9788cb636",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/dino_head.py",
+      "bytes": 2007,
+      "sha256": "9fdb1fa61c0609dc0876f711f9d0d828c33bf9fd972aab3d9c968d44e16b98d1",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/drop_path.py",
+      "bytes": 1157,
+      "sha256": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/layer_scale.py",
+      "bytes": 1097,
+      "sha256": "dadd5aafe178f1bf72a205a02a6645c7e635cacbad585d4a7369c200c6e89135",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/mlp.py",
+      "bytes": 1269,
+      "sha256": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/patch_embed.py",
+      "bytes": 2829,
+      "sha256": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/layers/swiglu_ffn.py",
+      "bytes": 3200,
+      "sha256": "e46d2948fb97e497cf991ff82ce30cb59b59fdf2e12a19568417113716b4f119",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/models/__init__.py",
+      "bytes": 1574,
+      "sha256": "b93329ce676f3eb0c9a7790d1b3b2b114a0855ea8dc76e32e262d1a7dc6c55ae",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/dinov2/models/vision_transformer.py",
+      "bytes": 16438,
+      "sha256": "7799a260f2d7d0fe197331d08502fb8c542f9b7424723650f6a39b64fa2639ea",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/LICENSE",
+      "bytes": 11359,
+      "sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/dinov2/README.md",
+      "bytes": 32799,
+      "sha256": "d1bc2e9686522bbd66ed6123dc81eb36b3a98e8ea9a2ca97778f54a1c641c9e1",
+      "vendor": "dinov2"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/FocalNetPrior.py",
+      "bytes": 10115,
+      "sha256": "1f381e3c1cffe721f5f52cc0b63337656b5faa0ea02ae959e481b91f3a557009",
+      "vendor": "hndiff"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/HazeDiffusionUnet.py",
+      "bytes": 26900,
+      "sha256": "7664e602d7e4c53fc9d4003f7b50773f9d64e45097324fea09e3061e29f9ac75",
+      "vendor": "hndiff"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/LatentEncoder.py",
+      "bytes": 9144,
+      "sha256": "47da7da06c28b6768c0278b4355fc14b89bea91efd1f7f9c7d4853ab5e04626a",
+      "vendor": "hndiff"
+    },
+    {
+      "path": "third_party/hndiff/FocalNet/model/layers.py",
+      "bytes": 2957,
+      "sha256": "e34e1300c298e36a9c001e5a54e2d13be24b713aac58318870232fded1de9cd9",
+      "vendor": "hndiff"
+    },
+    {
+      "path": "third_party/hndiff/LOCAL_SOURCE_NOTES.md",
+      "bytes": 6038,
+      "sha256": "d6e3f8993edf92bcb074d4e304ed5b0eb08bd3d17f233035129d7fdad1097045",
+      "vendor": "hndiff"
+    },
+    {
+      "path": "third_party/hndiff/README.md",
+      "bytes": 9456,
+      "sha256": "e213586c6c373a83fc964021417579ed2eea842596429ce1665432611b16f140",
+      "vendor": "hndiff"
+    },
+    {
+      "path": "third_party/pgl_net/LOCAL_SOURCE_NOTES.md",
+      "bytes": 2351,
+      "sha256": "cf04485405d2b27ba0d9a33c955dce1e6a059f3c08537a4155244a34a0d1b0c5",
+      "vendor": "pgl_net"
+    },
+    {
+      "path": "third_party/pgl_net/PGLNet.py",
+      "bytes": 8823,
+      "sha256": "85b4f94967555ee55d8536408109a77f7565c6ac2ada4bc7dd8992b04a5ef4d7",
+      "vendor": "pgl_net"
+    },
+    {
+      "path": "third_party/pgl_net/README.md",
+      "bytes": 8205,
+      "sha256": "b3fd59b2f55daac9ab8267f68f03c8792712e50adac232f77e102488fca3de3a",
+      "vendor": "pgl_net"
+    },
+    {
+      "path": "third_party/pixrestore/LOCAL_SOURCE_NOTES.md",
+      "bytes": 2235,
+      "sha256": "825a94ce957d67265430f2c03f064256f429c7105e63809f864b142d0d6f6420",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/__init__.py",
+      "bytes": 339,
+      "sha256": "562150ba920bbd1b64b6f07baa0d6ffc3fd66cad295b0505bb871e04f7cbb257",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/flow.py",
+      "bytes": 19566,
+      "sha256": "4212987fd6514494ec45fd7315d0a2be1b263ffadcde4ce2492f4266eb37f9ae",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/__init__.py",
+      "bytes": 94,
+      "sha256": "57ee7934e076c58027fec3a889d026c00e8e41b96a60e830b3094b94199a4b41",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/layers.py",
+      "bytes": 10871,
+      "sha256": "8936ccec1c77fbc13ee31e892ebd5b399e6150da2035d3dbfae9865429cefcf3",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/patch_embed.py",
+      "bytes": 1775,
+      "sha256": "28b0b670ff05d8d47d5258847493ca4cc10cd34407e166f86b62ced605b42bdc",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/pixel_dit.py",
+      "bytes": 22357,
+      "sha256": "4bf20b499144b9d10c7cc01b9499170714ea1c8f5305a1f4083c867eaf7da6d3",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/rms_norm.py",
+      "bytes": 469,
+      "sha256": "009c3df874c72f68db08e6ac1a2199213605d62918b7488a697102eb24ac65f5",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/rope.py",
+      "bytes": 2727,
+      "sha256": "7b73661b9efa16a538079d55795641e0aed2dab5e05e71ab6be7675349a91c06",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/models/swiglu.py",
+      "bytes": 884,
+      "sha256": "2f5824e2dc9c2c8911a61ae3e62819590804a9c4dd00ea03f0979744de374abb",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/pixrestore/vision.py",
+      "bytes": 3166,
+      "sha256": "81cca0775440f1b0f4069ea148589ad04ef57b52412e1585c0603f5dc8afaa40",
+      "vendor": "pixrestore"
+    },
+    {
+      "path": "third_party/pixrestore/README.md",
+      "bytes": 5940,
+      "sha256": "14475fbc44caafeb291a6ca5d63038d18bb1cdcb8b0934838ba22574a882d0d5",
+      "vendor": "pixrestore"
+    }
+  ],
+  "checkpoint_files": [
+    {
+      "path": "checkpoints/hndiff/final_dm_FocalNet.pth",
+      "bytes": 41509098,
+      "sha256": "144c6b5949b99fb34d90c04138c3555f32ddc0d7b2607d7c7476c8dbb67bfb42"
+    },
+    {
+      "path": "checkpoints/hndiff/final_FocalNet.pth",
+      "bytes": 16498860,
+      "sha256": "ed02d0ad8bf9f3cbdb14ca40678fe0cc3b4fa011085de4ce86958786363e9d27"
+    },
+    {
+      "path": "checkpoints/pgl_net/rw2ah_pglnet_t.pk",
+      "bytes": 5833055,
+      "sha256": "1ea04c0d993cc2e5aa6a36a6c77f5ac7719d4faa1fede551c3bc8db23f89526e"
+    },
+    {
+      "path": "checkpoints/pixrestore/config.json",
+      "bytes": 2281,
+      "sha256": "978deb1b0aaa544c12355ffb8ffffee1fbf012493de876736aba2c32185d18f4"
+    },
+    {
+      "path": "checkpoints/pixrestore/dinov2_vits14_pretrain.pth",
+      "bytes": 88283115,
+      "sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9"
+    },
+    {
+      "path": "checkpoints/pixrestore/ema_model.safetensors",
+      "bytes": 128709340,
+      "sha256": "13c10ca30fa865977de393457e731db9f2469159dbd69c85fb3c79b3edf06895"
+    }
+  ],
+  "loading": "torch checkpoints: weights_only=True, audited NumPy/argparse metadata allowlist, strict=True; restoration safetensors: safetensors.load_file and strict=True. SHA-256 validated before every checkpoint load. No remote loaders are invoked.",
+  "preprocessing": {
+    "rgb": "uint8 HWC RGB",
+    "resize": "Downsample only to max_side (default512), preserve aspect; scale=min(1,max_side/max(H,W)); dimensions=max(1,round(original*scale)); PIL BICUBIC. max_side=None disables resizing.",
+    "padding": "Right/bottom NumPy reflect pad to multiple64, including very small images. Remove only padding after restoration; output retains resized dimensions.",
+    "output": "Map each official output range to [0,1], clamp, multiply255, numpy.round then uint8."
+  },
+  "configuration": {
+    "PGL-Net-T": {
+      "parameters": 780283,
+      "precision": "FP32",
+      "checkpoint_dataset": "RW2AH"
+    },
+    "HNDiff-FocalNet": {
+      "parameters": 14420392,
+      "precision": "FP32",
+      "checkpoint_dataset": "RW2AH",
+      "reverse_steps": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "caution": "Released checkpoint parameter count differs from paper 7.82M. Not a claim of reproducing that paper configuration."
+    },
+    "PixRestore-S": {
+      "parameters_restoration": 31645421,
+      "parameters_encoder": 22056576,
+      "parameters_total": 53701997,
+      "precision": "CUDA BF16 autocast when supported, otherwise FP32; CPU FP32",
+      "steps": 1,
+      "schedule": "linear",
+      "encoder_input_size": 448
+    }
+  },
+  "test_scope": "CPU preprocessing/cache/seed contract tests and strict checkpoint-load checks only in this manifest. Actual image quality and GPU tests are separate evaluation artifacts."
+}
