@@ -2,13 +2,17 @@
 
 **Local image dehazing with three recent pretrained methods, an English Gradio interface, and a reproducible RW2AH test comparison.**
 
+**Website:** [Open the image-dehazing UI](https://zhangyicristino.github.io/ROAS5800-image-dehzing/)
+
 This ROAS5800 Assignment 1 project integrates [PGL-Net-T](https://github.com/sc-30-bit/PGL-Net), [HNDiff-FocalNet](https://github.com/Jin-Ting-He/HNDiff), and [PixRestore-S](https://github.com/csslc/PixRestore). Project contributions are the common inference adapters, interactive UI, shared evaluation protocol, and measured comparison. The underlying algorithms and pretrained weights belong to their authors; no model is trained here.
 
 ![Single-page English UI with eight real saved examples](docs/ui_eight_samples_en.png)
 
 The screenshot shows the single-page website UI in `site/`. It includes eight real saved test examples, each with its processed hazy input, clean reference, three model outputs, original measurements, and a downloadable ZIP. The complete 352-pair numerical results and provenance are also included. Model code, weights, and the remaining dataset/output images are prepared locally using the steps below.
 
-## Single-page website preview
+## Single-page website
+
+Use the [public GitHub Pages website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/), or preview it locally:
 
 Run this from the repository root with Python installed:
 
@@ -18,7 +22,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 Open **http://127.0.0.1:8765/**. The first example loads automatically. Click any of the eight sample thumbnails to switch the real input, three before/after comparisons, measurements, and download ZIP.
 
-This static UI displays results from the original completed evaluation; choosing a saved example does not run a model. Uploading a new image shows an input preview and clears the saved outputs and measurements. New-image inference is available in the local Gradio app below and has not been connected to this website preview. The repository contains the website source; no GitHub Pages deployment is configured.
+This static UI displays results from the original completed evaluation; choosing a saved example does not run a model. Uploading a new image shows an input preview and clears the saved outputs and measurements. New-image inference is available in the local Gradio app below and has not been connected to this website. The `Deploy GitHub Pages` workflow publishes changes to `site/` from `main`.
 
 ## Measured results
 
