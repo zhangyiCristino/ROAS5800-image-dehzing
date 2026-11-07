@@ -302,8 +302,11 @@ def create_ui():
             with gr.Row(): saved_sliders=[gr.ImageSlider(label=m,height=300,format='png') for m in METHODS]
             saved_metrics=gr.Dataframe(headers=HEADERS,interactive=False,label='Recorded three-forward timing and quality')
             saved_ref=gr.Image(label='Aligned clear reference',height=240,interactive=False,format='png')
-            refresh.click(refresh_saved,outputs=[full_table,choice,full_message],api_name='refresh_benchmark')
-            choice.change(saved_image,inputs=choice,outputs=[*saved_sliders,saved_metrics,saved_ref],api_name='saved_image')
+            saved_outputs=[*saved_sliders,saved_metrics,saved_ref]
+            refreshed=refresh.click(refresh_saved,outputs=[full_table,choice,full_message],api_name='refresh_benchmark')
+            refreshed.then(saved_image,inputs=choice,outputs=saved_outputs,api_name=False)
+            choice.change(saved_image,inputs=choice,outputs=saved_outputs,api_name='saved_image')
+            demo.load(saved_image,inputs=choice,outputs=saved_outputs,api_name=False)
         with gr.Tab('Methods and protocol'):
             gr.Markdown('''### Three published methods
 - **SFMN (TIP 2025):** two-stage spatial/frequency modulation. [Official project](https://github.com/it-hao/SFMN)
