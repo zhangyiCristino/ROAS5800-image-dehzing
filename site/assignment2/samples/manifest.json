@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "source": {
+    "assignment": 2,
+    "dataset": "RW2AH test, all 352 original pairs",
+    "protocol": {
+      "max_side": 0,
+      "native_resolution": [
+        640,
+        512
+      ],
+      "runs": 3,
+      "seed": 0
+    },
+    "note": "Actual saved model outputs. A sample selection does not run new inference.",
+    "complete_evaluation": true,
+    "result_records_sha256": {
+      "SFMN": "af7cd1daf8d59087c069830e24c1638fee4ad64e6dc57e92b3ca2fb215ef27f0",
+      "SFHformer": "945831cae3dabd2e8df02364adc543603f4a792c6e3687da55dde6dfec21f895",
+      "IPC-Dehaze": "1b06c2af7b6a481940dfffb3fb8d2af2245840802c32942c2ab8b5572f20e855"
+    },
+    "recorded_at_utc": "2026-11-07T15:24:42.590403+00:00"
+  },
+  "samples": [
+    {
+      "id": "1-0010-02",
+      "label": "Sample 1",
+      "width": 640,
+      "height": 512,
+      "input": "samples/1-0010-02/input.png",
+      "reference": "samples/1-0010-02/reference.png",
+      "input_metrics": {
+        "id": "1-0010-02",
+        "psnr": 20.927003562763375,
+        "ssim": 0.6158255466778573,
+        "mae_255": 19.36727498372396
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/1-0010-02/sfmn.png",
+          "psnr": 23.343639579694027,
+          "ssim": 0.6444344484774988,
+          "gpu_ms": 202.27647399902344,
+          "peak_allocated_mib": 1551.18017578125,
+          "output_file_sha256": "c74595326eda10b028356315c29fdf03a13287e4ba7764be0f51423296d1c200",
+          "output_pixel_sha256": "74b34b5777962613204d8e9ad704186a15ac30d54af35193b3568b35a1e768b5",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/1-0010-02/sfhformer.png",
+          "psnr": 22.31109025501665,
+          "ssim": 0.6331418717790696,
+          "gpu_ms": 472.9702453613281,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "a53fed2b038aa98ff95d9de7a464f363b0f907cfb95d644e9995c709746fdc16",
+          "output_pixel_sha256": "075dcdbf8e99e8f07b9e66fe50ec88832a5163282ff21bafbc2e423ec07522a3",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/1-0010-02/ipc_dehaze.png",
+          "psnr": 15.061182594570607,
+          "ssim": 0.5657464783163677,
+          "gpu_ms": 6372.18994140625,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "b2e567e45f5d3257ac4e1ac2d7f8c871245092ca05db9f255b1d623f457d4457",
+          "output_pixel_sha256": "bc5704653738cc741e2899ae2dc2e6ca7253c0820d234cd9bfa89d770a800aee",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/1-0010-02/comparison.zip"
+    },
+    {
+      "id": "12-0002-05",
+      "label": "Sample 2",
+      "width": 640,
+      "height": 512,
+      "input": "samples/12-0002-05/input.png",
+      "reference": "samples/12-0002-05/reference.png",
+      "input_metrics": {
+        "id": "12-0002-05",
+        "psnr": 22.85625644937972,
+        "ssim": 0.823434900829326,
+        "mae_255": 13.497694905598959
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/12-0002-05/sfmn.png",
+          "psnr": 22.79710947126987,
+          "ssim": 0.8271522804802244,
+          "gpu_ms": 237.68502807617188,
+          "peak_allocated_mib": 1550.6376953125,
+          "output_file_sha256": "6dacd80ed70a13ef2dd6dcb8001d38db0dc8c4277715d43aa62ca093853f2f74",
+          "output_pixel_sha256": "144c73cdda0f865c1715930023b5ab45c6c6a68148dc99d24ef9e30e98734bfd",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/12-0002-05/sfhformer.png",
+          "psnr": 22.834572478182903,
+          "ssim": 0.8257356989413243,
+          "gpu_ms": 505.0936584472656,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "e04bfaf86df50729f61d89bbfee91e884f97fe84bf5f95b1a41f65583a11d853",
+          "output_pixel_sha256": "0cbafd44b37783239379e58f29dec0359bdc68bcd311abe08ba80bcd5699be08",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/12-0002-05/ipc_dehaze.png",
+          "psnr": 17.393795708924678,
+          "ssim": 0.7622696483477006,
+          "gpu_ms": 5253.73974609375,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "d6978a0b08d7f781e7c973bca862c35e4dbd8d0288e8233cc1470f39dd9a4aff",
+          "output_pixel_sha256": "b0fec3c96bdd28eb4fa502a286734546cd1d63422c691417bcbb3578a4c7723c",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/12-0002-05/comparison.zip"
+    },
+    {
+      "id": "2-0019-03",
+      "label": "Sample 3",
+      "width": 640,
+      "height": 512,
+      "input": "samples/2-0019-03/input.png",
+      "reference": "samples/2-0019-03/reference.png",
+      "input_metrics": {
+        "id": "2-0019-03",
+        "psnr": 18.169516549850364,
+        "ssim": 0.7093907302844674,
+        "mae_255": 25.705691528320312
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/2-0019-03/sfmn.png",
+          "psnr": 17.388873554780876,
+          "ssim": 0.7075365971522265,
+          "gpu_ms": 238.68470764160156,
+          "peak_allocated_mib": 1548.826171875,
+          "output_file_sha256": "4fb462406e14658ce0c29f34c69ece9f48ad68cba64316d4259d51467f16c651",
+          "output_pixel_sha256": "d5e9f531022937e18cc388b5a0bdec0218f1ea1f8bf50b12bc153d9b7991bd24",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/2-0019-03/sfhformer.png",
+          "psnr": 17.676626099654882,
+          "ssim": 0.7093461694144532,
+          "gpu_ms": 506.6342468261719,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "d8b3989e0bf759ebf04cf8e244e813ce8bcb08abf19de940d5c3a92532b6b89c",
+          "output_pixel_sha256": "fed7acfc7bc9b93d5ae7df02f1cedd02c1a3139bc426110093bdbbc87a31ff3d",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/2-0019-03/ipc_dehaze.png",
+          "psnr": 18.687488785437015,
+          "ssim": 0.719830552456021,
+          "gpu_ms": 5623.11669921875,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "fad49c7250adc45aeb61d3f3a3ae977ac76755a41250e0ad8a3c4f0664070047",
+          "output_pixel_sha256": "56db207de6941b0f33ed19138ed9a6f84865b058042b98da96ec524afafee1b2",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/2-0019-03/comparison.zip"
+    },
+    {
+      "id": "4-0005-07",
+      "label": "Sample 4",
+      "width": 640,
+      "height": 512,
+      "input": "samples/4-0005-07/input.png",
+      "reference": "samples/4-0005-07/reference.png",
+      "input_metrics": {
+        "id": "4-0005-07",
+        "psnr": 25.979110026573156,
+        "ssim": 0.959502646854251,
+        "mae_255": 10.77687276204427
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/4-0005-07/sfmn.png",
+          "psnr": 20.083019683638533,
+          "ssim": 0.9141840399695775,
+          "gpu_ms": 241.08551025390625,
+          "peak_allocated_mib": 1548.85595703125,
+          "output_file_sha256": "9256851eeb86f093fd8ad0e316174efac0e856c198bee2ac270ccd472706a177",
+          "output_pixel_sha256": "2d2e50d992f75b2a384ecece33f344cdaef3ca1a84a98265b2b81cc34bf6764a",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/4-0005-07/sfhformer.png",
+          "psnr": 15.814907808644474,
+          "ssim": 0.7785303813737916,
+          "gpu_ms": 547.7294311523438,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "58c0f21c242bc6e3dce3a02bdacb0579db1ee0b1bc594c8d2a77f879c19d4444",
+          "output_pixel_sha256": "a64df9be535d0013645de0528ce06e6cf617fe0eebd6e9d520bffad7486b7870",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/4-0005-07/ipc_dehaze.png",
+          "psnr": 9.05123534008874,
+          "ssim": 0.7530858243811154,
+          "gpu_ms": 5369.22216796875,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "ee24186f125465dc33c0a81171db5f0c710ff1f0a902da31d5ae6347f721c231",
+          "output_pixel_sha256": "5f08400fd6bc79a3d661cff6d0597f5464c56ec6fdc6d88e3375239661974b17",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/4-0005-07/comparison.zip"
+    },
+    {
+      "id": "8-0016-01",
+      "label": "Sample 5",
+      "width": 640,
+      "height": 512,
+      "input": "samples/8-0016-01/input.png",
+      "reference": "samples/8-0016-01/reference.png",
+      "input_metrics": {
+        "id": "8-0016-01",
+        "psnr": 20.659598057686743,
+        "ssim": 0.6638004844067179,
+        "mae_255": 19.343569946289062
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/8-0016-01/sfmn.png",
+          "psnr": 21.868808002130255,
+          "ssim": 0.6768047394623103,
+          "gpu_ms": 240.34371948242188,
+          "peak_allocated_mib": 1549.3232421875,
+          "output_file_sha256": "a9f7b30359c52ad9bf26d71dbbec6f5e185101fca3adb8c57796bba70bd0ce9f",
+          "output_pixel_sha256": "c4fc55d59af9d5e3ab3c7e4b7f0240d626196fd430b8095d921370eb911dec5f",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/8-0016-01/sfhformer.png",
+          "psnr": 21.616989671660846,
+          "ssim": 0.6737983034673561,
+          "gpu_ms": 499.4027404785156,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "402aacab11771c5596f452f65eaee9fae918bc15800a1a422a51543e5672370b",
+          "output_pixel_sha256": "f103f22916588761892907e2cc4cacd739b2922f2006959c431ca184d12948dd",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/8-0016-01/ipc_dehaze.png",
+          "psnr": 16.947022933015774,
+          "ssim": 0.6832786869724723,
+          "gpu_ms": 5390.2607421875,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "82ef958aec3f8f29f774894da77a62d0d78a72ab711d635e89b741b4db40c388",
+          "output_pixel_sha256": "cec454f8de68edf338b82400bf01fe60f7dc3c57533f3abd134b3d6ba27e69db",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/8-0016-01/comparison.zip"
+    },
+    {
+      "id": "9-0002-03",
+      "label": "Sample 6",
+      "width": 640,
+      "height": 512,
+      "input": "samples/9-0002-03/input.png",
+      "reference": "samples/9-0002-03/reference.png",
+      "input_metrics": {
+        "id": "9-0002-03",
+        "psnr": 16.2331706137703,
+        "ssim": 0.6012306841403502,
+        "mae_255": 30.748882039388022
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/9-0002-03/sfmn.png",
+          "psnr": 16.482771928494795,
+          "ssim": 0.6066996954499606,
+          "gpu_ms": 256.7139892578125,
+          "peak_allocated_mib": 1549.810546875,
+          "output_file_sha256": "f893c881dfa151c17ef824cdd7534fb4c1b54c8a5700e834db26a57f1c5499be",
+          "output_pixel_sha256": "439af15f134310c8493623ac2ac89ada275bceb8ce8eb1c241166ca5f1a324b4",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/9-0002-03/sfhformer.png",
+          "psnr": 16.654718237064394,
+          "ssim": 0.6116386889917416,
+          "gpu_ms": 505.0091857910156,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "42d032a4509799931c1c5096d7bc583d1f1ad099c22eb6b60cb18cda787b09b4",
+          "output_pixel_sha256": "ca75a19830e753223cfc88130d74740b2b17d9f72a604a37b77901db14285580",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/9-0002-03/ipc_dehaze.png",
+          "psnr": 15.302370072247037,
+          "ssim": 0.5873371421739063,
+          "gpu_ms": 5362.31787109375,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "411ce618e33314543745e972aa78be04d327b87a8607f2e61babb113f17a17d2",
+          "output_pixel_sha256": "79bd7d37916fdd64d505621c9a658ca931833ff691500569b8c2cd1a6b1e6abb",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/9-0002-03/comparison.zip"
+    },
+    {
+      "id": "10-0001-04",
+      "label": "Sample 7",
+      "width": 640,
+      "height": 512,
+      "input": "samples/10-0001-04/input.png",
+      "reference": "samples/10-0001-04/reference.png",
+      "input_metrics": {
+        "id": "10-0001-04",
+        "psnr": 19.556080563873223,
+        "ssim": 0.6023622172600919,
+        "mae_255": 22.075492350260415
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/10-0001-04/sfmn.png",
+          "psnr": 18.85880490648474,
+          "ssim": 0.6084971991728685,
+          "gpu_ms": 239.81910705566406,
+          "peak_allocated_mib": 1550.07421875,
+          "output_file_sha256": "c4a29dbb01c92a353ed1910f7a49626fa1f310d79c4e30d07585ae205a303ec7",
+          "output_pixel_sha256": "469c3320f5c9e38583a976850f8aef08c59c7067a4f81703602ba5eee8f2bf7b",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/10-0001-04/sfhformer.png",
+          "psnr": 19.347092000139153,
+          "ssim": 0.6088056400399654,
+          "gpu_ms": 508.8485107421875,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "30cecaf5dbaedb7a04b3d1b9ec8d6d213d10043ba92aefc04e6f37a256795119",
+          "output_pixel_sha256": "8cecd6da5d094f5e95b8d3fe081b1c18e7d0e978fd1c4856b3dc4a044464bb08",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/10-0001-04/ipc_dehaze.png",
+          "psnr": 12.39658058062191,
+          "ssim": 0.6012677357489724,
+          "gpu_ms": 5270.1328125,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "9957caf9bfc6c858f890e90d88d91e2dc58d324d10fa1d7980158abe423e246f",
+          "output_pixel_sha256": "0512d670bf48d8b6f0806e7bc37b36ced9f90cb5a8a687656856cb5d4d60b2a4",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/10-0001-04/comparison.zip"
+    },
+    {
+      "id": "11-0001-02",
+      "label": "Sample 8",
+      "width": 640,
+      "height": 512,
+      "input": "samples/11-0001-02/input.png",
+      "reference": "samples/11-0001-02/reference.png",
+      "input_metrics": {
+        "id": "11-0001-02",
+        "psnr": 22.299336851545387,
+        "ssim": 0.8132732705713531,
+        "mae_255": 15.190147908528646
+      },
+      "methods": {
+        "SFMN": {
+          "output": "samples/11-0001-02/sfmn.png",
+          "psnr": 22.227748317699557,
+          "ssim": 0.8101014538095369,
+          "gpu_ms": 235.8224639892578,
+          "peak_allocated_mib": 1549.85546875,
+          "output_file_sha256": "d76271f20fb3542df684ff1d2bb2d2282666c66a2bd88454f9fd99f49de17e19",
+          "output_pixel_sha256": "81b07bcdbb54c738cad6242fa8e9e4635c2c02aa586baab4b53b320d63ec8c6b",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "SFHformer": {
+          "output": "samples/11-0001-02/sfhformer.png",
+          "psnr": 22.44990905854553,
+          "ssim": 0.8113272783723504,
+          "gpu_ms": 505.1773681640625,
+          "peak_allocated_mib": 586.0537109375,
+          "output_file_sha256": "5753fde4d541785a5cb8861022e7d49e6ec95e03ea57ea6803cc00b24aab65df",
+          "output_pixel_sha256": "950cd03ae33222f8995fc85d33cf4fdcbbeb5030ffcde7ffba464ef8bc1f4c7b",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 1
+        },
+        "IPC-Dehaze": {
+          "output": "samples/11-0001-02/ipc_dehaze.png",
+          "psnr": 16.228348072021717,
+          "ssim": 0.7518506126173818,
+          "gpu_ms": 5288.25,
+          "peak_allocated_mib": 848.79638671875,
+          "output_file_sha256": "6c5e04730bc88100e4281c7e86ecc3d55e620419e49f30cefdb11e4bf2a2c574",
+          "output_pixel_sha256": "de891e74283b5c368b3ff43fbbe42d74719530fe8d959ba3916298449241b2c9",
+          "precision": "FP32",
+          "runs": 3,
+          "seed": 0,
+          "iterations": 8
+        }
+      },
+      "download": "samples/11-0001-02/comparison.zip"
+    }
+  ],
+  "full_test": {
+    "complete": true,
+    "count": 352,
+    "target_count": 352,
+    "summary": {
+      "Hazy input": {
+        "count": 352,
+        "psnr_mean": 18.6222438776875,
+        "ssim_mean": 0.5563835482862364,
+        "mae_255_mean": 26.530604296019582,
+        "gpu_ms_median": null,
+        "gpu_ms_mean": null,
+        "peak_MiB_max": null
+      },
+      "SFMN": {
+        "count": 352,
+        "psnr_mean": 18.32230406858361,
+        "ssim_mean": 0.5560615960342891,
+        "mae_255_mean": 27.495420363455107,
+        "gpu_ms_median": 241.30431365966797,
+        "gpu_ms_mean": 249.61480444127864,
+        "peak_MiB_max": 1552.8818359375,
+        "elapsed_s_including_IO_metrics": 337.619262799999,
+        "repeat_equal_count": 352
+      },
+      "SFHformer": {
+        "count": 352,
+        "psnr_mean": 18.374533658589684,
+        "ssim_mean": 0.5552669636134162,
+        "mae_255_mean": 27.3075051798965,
+        "gpu_ms_median": 505.226318359375,
+        "gpu_ms_mean": 498.74209213256836,
+        "peak_MiB_max": 586.0537109375,
+        "elapsed_s_including_IO_metrics": 625.1887602999996,
+        "repeat_equal_count": 352
+      },
+      "IPC-Dehaze": {
+        "count": 352,
+        "psnr_mean": 13.205250504762201,
+        "ssim_mean": 0.49175537152312215,
+        "mae_255_mean": 49.69551024870439,
+        "gpu_ms_median": 5379.706787109375,
+        "gpu_ms_mean": 5505.9408402876425,
+        "peak_MiB_max": 848.79638671875,
+        "elapsed_s_including_IO_metrics": 5903.6186019000015,
+        "repeat_equal_count": 352
+      }
+    }
+  }
+}

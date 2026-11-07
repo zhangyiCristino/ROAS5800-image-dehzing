@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "assignment": 2,
+  "models": {
+    "SFMN": {
+      "parameters": 3428011,
+      "precision": "FP32",
+      "iterations": 1,
+      "weights": [
+        {
+          "file": "sources\\sfmn\\test_code\\ckpt\\sfmn_ots.pt",
+          "bytes": 14015405,
+          "sha256": "0760aedfeac6e2f17a9ab04fa62832fe3a8d988d39291ece4f1d935f1bf781af"
+        }
+      ]
+    },
+    "SFHformer": {
+      "parameters": 4752899,
+      "precision": "FP32",
+      "iterations": 1,
+      "weights": [
+        {
+          "file": "sources\\sfhformer\\dehazing\\sfhformer_haze_ots.pth",
+          "bytes": 19726417,
+          "sha256": "4fea7529188abe3d71a89f81beb9603d3d40cab9e0d05d568f99e75e872f1fcd"
+        }
+      ]
+    },
+    "IPC-Dehaze": {
+      "parameters": 43163748,
+      "precision": "FP32",
+      "iterations": 8,
+      "weights": [
+        {
+          "file": "checkpoints\\ipc_dehaze\\predictor.pth",
+          "bytes": 133017165,
+          "sha256": "eb6019e01f28c6de2c0c1bc5ece283d9aa730c839cf274091d4d45d376717c53"
+        },
+        {
+          "file": "checkpoints\\ipc_dehaze\\critic.pth",
+          "bytes": 45804627,
+          "sha256": "321e98ad60fe1e7ced27904ba81d1cfe4dbe31a334d22b678dfae6f3be0c96d6"
+        }
+      ]
+    }
+  }
+}

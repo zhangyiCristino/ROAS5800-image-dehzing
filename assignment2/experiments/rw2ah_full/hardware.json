@@ -1,0 +1,13 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_total_MiB": 8187.5,
+  "cpu": "AMD Ryzen 9 7845HX with Radeon Graphics (Windows registry)",
+  "ram_GiB": 15.212940216064453,
+  "numpy": "1.26.4",
+  "Pillow": "11.3.0",
+  "skimage": "0.26.0"
+}

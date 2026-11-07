@@ -1,0 +1,60 @@
+{
+  "assignment": 2,
+  "id": "8-0016-01",
+  "input_source_sha256": "889d079d00153ce3cf71bbfee209cf03e9ad6106b99138c424957a42585fcce3",
+  "reference_source_sha256": "4bfc51ab2580c75be1a6653f0aa9cce959973ef1ee4fc0330b75988fdea41e51",
+  "precision": "FP32",
+  "seed": 0,
+  "runs": 3,
+  "dimensions": [
+    640,
+    512
+  ],
+  "max_side": 0,
+  "methods": {
+    "SFMN": {
+      "output": "samples/8-0016-01/sfmn.png",
+      "psnr": 21.868808002130255,
+      "ssim": 0.6768047394623103,
+      "gpu_ms": 240.34371948242188,
+      "peak_allocated_mib": 1549.3232421875,
+      "output_file_sha256": "a9f7b30359c52ad9bf26d71dbbec6f5e185101fca3adb8c57796bba70bd0ce9f",
+      "output_pixel_sha256": "c4fc55d59af9d5e3ab3c7e4b7f0240d626196fd430b8095d921370eb911dec5f",
+      "precision": "FP32",
+      "runs": 3,
+      "seed": 0,
+      "iterations": 1
+    },
+    "SFHformer": {
+      "output": "samples/8-0016-01/sfhformer.png",
+      "psnr": 21.616989671660846,
+      "ssim": 0.6737983034673561,
+      "gpu_ms": 499.4027404785156,
+      "peak_allocated_mib": 586.0537109375,
+      "output_file_sha256": "402aacab11771c5596f452f65eaee9fae918bc15800a1a422a51543e5672370b",
+      "output_pixel_sha256": "f103f22916588761892907e2cc4cacd739b2922f2006959c431ca184d12948dd",
+      "precision": "FP32",
+      "runs": 3,
+      "seed": 0,
+      "iterations": 1
+    },
+    "IPC-Dehaze": {
+      "output": "samples/8-0016-01/ipc_dehaze.png",
+      "psnr": 16.947022933015774,
+      "ssim": 0.6832786869724723,
+      "gpu_ms": 5390.2607421875,
+      "peak_allocated_mib": 848.79638671875,
+      "output_file_sha256": "82ef958aec3f8f29f774894da77a62d0d78a72ab711d635e89b741b4db40c388",
+      "output_pixel_sha256": "cec454f8de68edf338b82400bf01fe60f7dc3c57533f3abd134b3d6ba27e69db",
+      "precision": "FP32",
+      "runs": 3,
+      "seed": 0,
+      "iterations": 8
+    }
+  },
+  "evaluation_record_sha256": {
+    "SFMN": "af7cd1daf8d59087c069830e24c1638fee4ad64e6dc57e92b3ca2fb215ef27f0",
+    "SFHformer": "945831cae3dabd2e8df02364adc543603f4a792c6e3687da55dde6dfec21f895",
+    "IPC-Dehaze": "1b06c2af7b6a481940dfffb3fb8d2af2245840802c32942c2ab8b5572f20e855"
+  }
+}

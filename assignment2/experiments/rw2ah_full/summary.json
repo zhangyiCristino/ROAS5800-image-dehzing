@@ -1,0 +1,44 @@
+{
+  "Hazy input": {
+    "count": 352,
+    "psnr_mean": 18.6222438776875,
+    "ssim_mean": 0.5563835482862364,
+    "mae_255_mean": 26.530604296019582,
+    "gpu_ms_median": null,
+    "gpu_ms_mean": null,
+    "peak_MiB_max": null
+  },
+  "SFMN": {
+    "count": 352,
+    "psnr_mean": 18.32230406858361,
+    "ssim_mean": 0.5560615960342891,
+    "mae_255_mean": 27.495420363455107,
+    "gpu_ms_median": 241.30431365966797,
+    "gpu_ms_mean": 249.61480444127864,
+    "peak_MiB_max": 1552.8818359375,
+    "elapsed_s_including_IO_metrics": 337.619262799999,
+    "repeat_equal_count": 352
+  },
+  "SFHformer": {
+    "count": 352,
+    "psnr_mean": 18.374533658589684,
+    "ssim_mean": 0.5552669636134162,
+    "mae_255_mean": 27.3075051798965,
+    "gpu_ms_median": 505.226318359375,
+    "gpu_ms_mean": 498.74209213256836,
+    "peak_MiB_max": 586.0537109375,
+    "elapsed_s_including_IO_metrics": 625.1887602999996,
+    "repeat_equal_count": 352
+  },
+  "IPC-Dehaze": {
+    "count": 352,
+    "psnr_mean": 13.205250504762201,
+    "ssim_mean": 0.49175537152312215,
+    "mae_255_mean": 49.69551024870439,
+    "gpu_ms_median": 5379.706787109375,
+    "gpu_ms_mean": 5505.9408402876425,
+    "peak_MiB_max": 848.79638671875,
+    "elapsed_s_including_IO_metrics": 5903.6186019000015,
+    "repeat_equal_count": 352
+  }
+}

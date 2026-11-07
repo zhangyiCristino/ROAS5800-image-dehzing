@@ -1,8 +1,22 @@
-# Single-image dehazing UI
+# Assignment portal and comparison interfaces
+
+- `index.html`: assignment selection portal.
+- `assignment1.html`: original Assignment 1 interface, methods and eight examples.
+- `assignment2/index.html`: Assignment 2 interface, new methods, native-resolution
+  examples, complete-test measurements and deliverable downloads.
+- `app.js` and `styles.css`: shared interaction/design foundation. Manifests and
+  result records remain separated by assignment.
+
+Serve this directory over HTTP. Public deployment continues through the existing
+GitHub Pages workflow. Website uploads preview inputs; local Gradio applications
+run new-image model inference.
+
+## Original Assignment 1 interface
+
 
 This directory contains the standalone English assignment UI and eight real saved test examples. It supports sample selection, method selection, input/output sliders, measured per-image results and ZIP downloads. The first example loads by default.
 
-**Public website:** https://zhangyicristino.github.io/ROAS5800-image-dehzing/
+**Public website:** https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment1.html
 
 From the repository root:
 
@@ -10,7 +24,7 @@ From the repository root:
 python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-Visit **http://127.0.0.1:8765/**. Use an HTTP server rather than opening `index.html` directly so the browser can load `samples/manifest.json`.
+Visit **http://127.0.0.1:8765/assignment1.html**. Use an HTTP server rather than opening `index.html` directly so the browser can load `samples/manifest.json`.
 
 Saved results come from the completed 19 October 2026 RW2AH evaluation at maximum side 512, seed 0 and three timing runs per image. They are not simulated or recomputed when clicked. Each ZIP contains the processed input, clean reference, all three saved model outputs, original metric CSV and run settings. Parameter and timing differences are documented in the main repository.
 

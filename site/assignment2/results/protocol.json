@@ -1,0 +1,17 @@
+{
+  "dataset": "All 352 paired RW2AH test images, original release pairing",
+  "input": "Original resolution, PIL RGB conversion, no resizing or geometric crop",
+  "padding": "All models: official IPC mirror concatenation to strictly next multiple of 32; remove all padding before metrics",
+  "range": "RGB input float32 uint8/255. No normalization, sharpening, color correction, or ground-truth-dependent tuning",
+  "output": "Clip to [0,1], multiply by 255, numpy.round, uint8 RGB PNG. Metrics use the saved PNG values",
+  "psnr": "10 log10(255^2 / mean RGB squared error), full image, no border shave",
+  "ssim": "skimage RGB, channel_axis=-1, data_range=255, Gaussian weights, sigma=1.5, win_size=11, use_sample_covariance=False",
+  "aggregation": "Arithmetic mean of per-image PSNR and SSIM; each image has equal weight",
+  "weights": "Official released OTS weights for SFMN and SFHformer. Official real-world release for IPC-Dehaze. These are cross-dataset tests, not matched training-budget comparisons",
+  "precision": "All FP32, TF32 disabled, autocast disabled, batch 1, one loaded model at a time",
+  "inference": "SFMN both stages and output index 3; full SFHformer; IPC predictor and critic, all 8 official inference iterations, including VQGAN encoding and decoding",
+  "randomness": "Torch CPU/CUDA seeds reset to 0 before each forward. Save first output and compare quantized repeat outputs",
+  "timing": "Two unrecorded warmup forwards per model; CUDA event timing of full padded model inference, transfers/load/PNG/metrics excluded. Per-image median of 3 forwards, then dataset median. CPU wall forward time also retained",
+  "memory": "torch.cuda.max_memory_allocated during each forward, including loaded model/input/output tensors. Does not equal total driver/device use",
+  "scope": "Independent laptop generalization/deployment evaluation. Do not substitute these scores for paper-reported benchmark values or claim global SOTA"
+}

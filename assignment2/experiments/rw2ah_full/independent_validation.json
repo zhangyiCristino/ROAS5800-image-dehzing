@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "count_pairs": 352,
+  "restored_outputs_verified": 1056,
+  "quality_recomputed_for_all_inputs_and_outputs": true,
+  "source_and_output_hashes_verified": true,
+  "official_weight_hashes_verified": true,
+  "strict_weight_loading": true,
+  "implementation_hashes_verified": true,
+  "implementation_hashes_scope": "original evaluated implementation",
+  "timing_and_memory_aggregates_verified": true,
+  "full_ipc_iterations": 8,
+  "three_equal_quantized_repeats_per_image": true,
+  "psnr_improved_image_counts": {
+    "SFMN": 165,
+    "SFHformer": 171,
+    "IPC-Dehaze": 41
+  },
+  "example_ids": [
+    "1-0125-06",
+    "8-0121-02"
+  ]
+}

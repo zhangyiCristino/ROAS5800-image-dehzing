@@ -1,0 +1,15 @@
+{
+  "method": "SFHformer",
+  "precision": "FP32",
+  "strict_load": true,
+  "parameters": 4752899,
+  "checkpoint_split": "ots",
+  "iterations": 1,
+  "weights": [
+    {
+      "file": "sources\\sfhformer\\dehazing\\sfhformer_haze_ots.pth",
+      "bytes": 19726417,
+      "sha256": "4fea7529188abe3d71a89f81beb9603d3d40cab9e0d05d568f99e75e872f1fcd"
+    }
+  ]
+}

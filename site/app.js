@@ -2,7 +2,12 @@
 
 // This page displays original saved examples and local uploads. It does not run models.
 (() => {
-  const METHODS = ['PGL-Net-T', 'HNDiff-FocalNet', 'PixRestore-S'];
+  const ASSIGNMENT = Number(document.body.dataset.assignment || 1);
+  const METHODS = ASSIGNMENT === 2
+    ? ['SFMN', 'SFHformer', 'IPC-Dehaze']
+    : ['PGL-Net-T', 'HNDiff-FocalNet', 'PixRestore-S'];
+  const RECORDED_MAX_SIDE = ASSIGNMENT === 2 ? 0 : 512;
+  const DEFAULT_MAX_SIDE = String(RECORDED_MAX_SIDE);
   const MAX_FILE_BYTES = 32 * 1024 * 1024;
   const $ = (id) => document.getElementById(id);
   const state = {hazy: null, reference: null, sample: null};
@@ -40,7 +45,7 @@
     if (!state.hazy) return null;
     if (state.sample) return {width: state.sample.width, height: state.sample.height};
     const maximum = Number($('max-side').value);
-    const scale = Math.min(1, maximum / Math.max(state.hazy.width, state.hazy.height));
+    const scale = maximum ? Math.min(1, maximum / Math.max(state.hazy.width, state.hazy.height)) : 1;
     const round = (value) => {
       const lower = Math.floor(value);
       return value - lower === 0.5 ? lower + lower % 2 : Math.round(value);
@@ -104,8 +109,8 @@
       : '';
     $('selection-count').textContent = `${selected.length} selected`;
     $('max-side').disabled = Boolean(state.sample) || pendingSample;
-    if (state.sample) $('max-side').value = '512';
-    $('compare-button').textContent = state.sample ? 'Show saved results' : 'Compare methods';
+    if (state.sample) $('max-side').value = DEFAULT_MAX_SIDE;
+    $('compare-button').textContent = state.sample ? 'Show saved results' : ASSIGNMENT === 2 ? 'Preview selected methods' : 'Compare methods';
     $('compare-button').disabled = !state.hazy || !selected.length || Boolean(mismatch) || pending.hazy || pending.reference || pendingSample;
     $('download-button').disabled = !state.sample || !selected.length || pendingSample || pending.hazy || pending.reference;
     $('download-button').title = state.sample
@@ -267,7 +272,8 @@
 
   function validateManifest(manifest) {
     if (manifest.schema_version !== 1 || !Array.isArray(manifest.samples) || !manifest.samples.length ||
-        manifest.source?.protocol?.max_side !== 512) throw new Error('The saved-example manifest is invalid.');
+        manifest.source?.protocol?.max_side !== RECORDED_MAX_SIDE ||
+        (manifest.source?.assignment || 1) !== ASSIGNMENT) throw new Error('The saved-example manifest is invalid.');
     const ids = new Set();
     for (const sample of manifest.samples) {
       if (typeof sample.id !== 'string' || !sample.id || ids.has(sample.id) || typeof sample.label !== 'string' ||
@@ -328,10 +334,11 @@
       state.reference = {url: sample.reference, width: sample.width, height: sample.height,
         name: `${sample.id} · clean reference`, origin: 'saved'};
       state.sample = sample;
-      $('max-side').value = '512';
+      $('max-side').value = DEFAULT_MAX_SIDE;
       for (const card of cards) card.querySelector('.comparison-range').value = '50';
       const recorded = sourceInfo?.recorded_at_utc ? ` · recorded ${sourceInfo.recorded_at_utc.slice(0, 10)}` : '';
-      $('sample-note').textContent = `${sample.label} · ${sample.id}${recorded} · original saved run at maximum side 512 px.`;
+      const resolution = ASSIGNMENT === 2 ? 'original 640 × 512 resolution' : 'maximum side 512 px';
+      $('sample-note').textContent = `${sample.label} · ${sample.id}${recorded} · recorded at ${resolution}.`;
     } catch {
       if (version === sampleVersion) {
         $('sample-note').textContent = `Could not load ${sample.label}. Choose another saved example or upload your own image.`;
@@ -383,12 +390,40 @@
       const manifest = validateManifest(await response.json());
       sourceInfo = manifest.source;
       availableSamples = manifest.samples;
+      renderFullBenchmark(manifest);
       renderSampleList();
       if (interactionVersion === 0) await loadSample(availableSamples[0], true);
       else if (!state.sample && !pendingSample) $('sample-note').textContent = 'Choose a saved example, or upload your own image.';
     } catch {
       $('sample-note').textContent = 'Saved examples are unavailable. You can still upload your own image.';
       if (interactionVersion === 0) message('Saved examples could not be loaded. Upload an image to explore the UI preview.', true);
+    }
+  }
+
+  function renderFullBenchmark(manifest) {
+    const body = $('full-benchmark-body');
+    if (!body) return;
+    const full = manifest.full_test;
+    if (!full || full.complete !== true) {
+      body.replaceChildren();
+      const row = document.createElement('tr'); const cell = document.createElement('td');
+      cell.colSpan = 5;
+      cell.textContent = 'The complete evaluation is still running. Available samples contain their actual recorded outputs.';
+      row.append(cell); body.append(row); return;
+    }
+    if (full.count !== 352) throw new Error('The complete-test record is unavailable.');
+    body.replaceChildren();
+    for (const method of ['Hazy input', ...METHODS]) {
+      const item = full.summary[method];
+      if (!item || item.count !== 352 || !Number.isFinite(item.psnr_mean) || !Number.isFinite(item.ssim_mean)) {
+        throw new Error('The complete-test measurements are inconsistent.');
+      }
+      const row = document.createElement('tr');
+      for (const value of [method,numberOrDash(item.psnr_mean,2),numberOrDash(item.ssim_mean,4),
+                           numberOrDash(item.gpu_ms_median,1),numberOrDash(item.peak_MiB_max,0)]) {
+        const cell = document.createElement('td'); cell.textContent = value; row.append(cell);
+      }
+      body.append(row);
     }
   }
 
@@ -471,7 +506,7 @@
     clearImage('hazy', false);
     clearImage('reference', false);
     methodInputs.forEach((input) => { input.checked = METHODS.includes(input.value); });
-    $('max-side').value = '512';
+    $('max-side').value = DEFAULT_MAX_SIDE;
     for (const card of cards) card.querySelector('.comparison-range').value = '50';
     render();
     inputStatus();

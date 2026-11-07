@@ -1,0 +1,53 @@
+[
+  {
+    "asset": "assets\\figures\\sfmn-architecture.png",
+    "source": "papers/sfmn.pdf",
+    "page_1based": 4,
+    "original_figure": "SFMN Fig. 3, overall architecture",
+    "bounds_fraction": [
+      0.135,
+      0.074,
+      0.866,
+      0.334
+    ],
+    "method": "PDFium rendering at 3.5x and lossless crop; no content redraw",
+    "size_px": [
+      1566,
+      721
+    ]
+  },
+  {
+    "asset": "assets\\figures\\sfhformer-architecture.png",
+    "source": "papers/sfhformer.pdf",
+    "page_1based": 6,
+    "original_figure": "SFHformer Fig. 2, architecture and local-global blocks",
+    "bounds_fraction": [
+      0.217,
+      0.144,
+      0.789,
+      0.362
+    ],
+    "method": "PDFium rendering at 3.5x and lossless crop; no content redraw",
+    "size_px": [
+      1225,
+      604
+    ]
+  },
+  {
+    "asset": "assets\\figures\\ipc_dehaze-architecture.png",
+    "source": "papers/ipc_dehaze.pdf",
+    "page_1based": 3,
+    "original_figure": "IPC-Dehaze Fig. 2, iterative predictor-critic architecture",
+    "bounds_fraction": [
+      0.089,
+      0.088,
+      0.905,
+      0.335
+    ],
+    "method": "PDFium rendering at 3.5x and lossless crop; no content redraw",
+    "size_px": [
+      1748,
+      685
+    ]
+  }
+]

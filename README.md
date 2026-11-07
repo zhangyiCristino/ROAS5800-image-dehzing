@@ -1,8 +1,32 @@
-# ROAS5800作业-image dehzing
+# ROAS5800 Image Dehazing Projects
+
+**[Open the assignment portal](https://zhangyicristino.github.io/ROAS5800-image-dehzing/)**
+
+This repository keeps two coursework projects distinct, with their own methods,
+evaluation settings, reports and interactive interfaces.
+
+| Project | Methods | Local test protocol | Local application |
+|---|---|---|---|
+| [Assignment 1](#assignment-1-details) | PGL-Net-T, HNDiff-FocalNet, PixRestore-S | 352 RW2AH pairs, maximum side 512 | Original launcher, port 7860 |
+| [Assignment 2](assignment2/README.md) | SFMN, SFHformer, IPC-Dehaze | 352 RW2AH pairs, original 640×512 | `run_assignment2.ps1`, port 7861 |
+
+The [Assignment 1 website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment1.html)
+and [Assignment 2 website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment2/)
+provide actual saved comparisons, method selection, before/after sliders and ZIP
+downloads. New-image GPU inference runs in the separate local applications.
+Each assignment retains its own protocol; the tables are not a controlled
+six-model leaderboard.
+
+Assignment 2 includes a [two-page report](assignment2/report/50063117-YiZhang-HW2.pdf),
+[presentation](assignment2/presentation/50063117-YiZhang-HW2.pptx),
+[Chinese beginner guide](assignment2/docs/beginner-guide.md), pinned official
+source/weight preparation and independent full-output validation.
+
+## Assignment 1 details
 
 **Local image dehazing with three recent pretrained methods, an English Gradio interface, and a reproducible RW2AH test comparison.**
 
-**Website:** [Open the image-dehazing UI](https://zhangyicristino.github.io/ROAS5800-image-dehzing/)
+**Website:** [Open the image-dehazing UI](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment1.html)
 
 This ROAS5800 Assignment 1 project integrates [PGL-Net-T](https://github.com/sc-30-bit/PGL-Net), [HNDiff-FocalNet](https://github.com/Jin-Ting-He/HNDiff), and [PixRestore-S](https://github.com/csslc/PixRestore). Project contributions are the common inference adapters, interactive UI, shared evaluation protocol, and measured comparison. The underlying algorithms and pretrained weights belong to their authors; no model is trained here.
 
@@ -12,7 +36,7 @@ The screenshot shows the single-page website UI in `site/`. It includes eight re
 
 ## Single-page website
 
-Use the [public GitHub Pages website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/), or preview it locally:
+Use the [public GitHub Pages website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment1.html), or preview it locally:
 
 Run this from the repository root with Python installed:
 
@@ -20,7 +44,7 @@ Run this from the repository root with Python installed:
 python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-Open **http://127.0.0.1:8765/**. The first example loads automatically. Click any of the eight sample thumbnails to switch the real input, three before/after comparisons, measurements, and download ZIP.
+Open **http://127.0.0.1:8765/assignment1.html**. The first example loads automatically. Click any of the eight sample thumbnails to switch the real input, three before/after comparisons, measurements, and download ZIP.
 
 This static UI displays results from the original completed evaluation; choosing a saved example does not run a model. Uploading a new image shows an input preview and clears the saved outputs and measurements. New-image inference is available in the local Gradio app below and has not been connected to this website. The `Deploy GitHub Pages` workflow publishes changes to `site/` from `main`.
 

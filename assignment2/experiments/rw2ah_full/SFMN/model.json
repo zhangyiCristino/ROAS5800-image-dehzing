@@ -1,0 +1,15 @@
+{
+  "method": "SFMN",
+  "precision": "FP32",
+  "strict_load": true,
+  "parameters": 3428011,
+  "checkpoint_split": "ots",
+  "iterations": 1,
+  "weights": [
+    {
+      "file": "sources\\sfmn\\test_code\\ckpt\\sfmn_ots.pt",
+      "bytes": 14015405,
+      "sha256": "0760aedfeac6e2f17a9ab04fa62832fe3a8d988d39291ece4f1d935f1bf781af"
+    }
+  ]
+}

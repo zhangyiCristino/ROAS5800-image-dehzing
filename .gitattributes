@@ -7,9 +7,15 @@
 *.bat text eol=crlf
 *.png binary
 *.zip binary
+*.pdf binary
+*.pptx binary
 # Preserve original manifest bytes: their SHA-256 is part of the evaluation record.
 data/manifest.json -text
 data/manifest_full.json -text
 third_party/SOURCE_MANIFEST.json -text
 results_full/*.json -text
 results_full/*.csv -text
+# Assignment 2 record hashes refer to exact original bytes, including newlines.
+assignment2/experiments/rw2ah_full/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+site/assignment2/samples/**/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+site/assignment2/samples/**/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

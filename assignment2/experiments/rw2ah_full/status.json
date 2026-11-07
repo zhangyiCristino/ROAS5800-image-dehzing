@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "methods": [
+    "Hazy input",
+    "SFMN",
+    "SFHformer",
+    "IPC-Dehaze"
+  ],
+  "pairs": 352
+}
