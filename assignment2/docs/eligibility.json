@@ -1,0 +1,11 @@
+{
+  "selected_methods": ["SFMN", "SFHformer", "IPC-Dehaze"],
+  "lecture_overlap": false,
+  "confirmation_source": "user_reply_in_this_conversation",
+  "user_statement_zh": "三种都没有讲过",
+  "confirmed_on_local_date": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "lecture_documents_independently_reviewed": false,
+  "excluded_assignment1_methods": ["PGL-Net-T", "HNDiff-FocalNet", "PixRestore-S"],
+  "assignment1_exclusion_source": "submitted Assignment 1 PDF"
+}

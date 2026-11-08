@@ -59,8 +59,10 @@ evidence for this laptop task than the selected official releases.
 The submitted Assignment 1 PDF establishes PGL-Net-T, HNDiff-FocalNet and
 PixRestore-S as the prior three methods. They are excluded. SGDN is also kept
 out of the selected trio because its dataset paper appears in that report's
-references. The lecture-note exclusion list has not been supplied, so no claim
-of completed lecture-note deduplication is made.
+references. On 8 November 2026, the user explicitly confirmed that SFMN,
+SFHformer and IPC-Dehaze had not been introduced in the lectures. This fact
+is user-confirmed; lecture files were not independently reviewed. The record
+is retained in `eligibility.json`.
 
 ## Dataset
 

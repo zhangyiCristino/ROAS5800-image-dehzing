@@ -111,9 +111,10 @@ generalization, not equal-budget training or a universal SOTA ranking.
 No training-from-scratch or downstream detector result is claimed.
 
 [Sources, figure/table anchors and terminology](docs/SOURCES.md) document the
-underlying papers. Lecture-note contents were not supplied, so check the
-course's lecture-paper exclusion rule before submission. All three selected
-methods differ from the Assignment 1 trio.
+underlying papers. On 8 November 2026, the student confirmed that none of the
+three selected papers was introduced in the lectures; see the
+[eligibility record](docs/eligibility.json). All three also differ from the
+Assignment 1 trio.
 
 ## Validation and third-party materials
 
