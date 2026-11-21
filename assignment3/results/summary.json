@@ -1,0 +1,40 @@
+{
+  "dataset": "RW2AH official test set",
+  "count": 352,
+  "resolution": [
+    640,
+    512
+  ],
+  "backbone": {
+    "psnr": 22.593426,
+    "ssim": 0.646501,
+    "lpips": 0.310073
+  },
+  "backbone_geo8": {
+    "count": 352,
+    "psnr": 22.676805,
+    "ssim": 0.65072,
+    "lpips": 0.313393
+  },
+  "historical_track1": {
+    "count": 352,
+    "psnr": 22.576968,
+    "ssim": 0.647483
+  },
+  "track2": {
+    "count": 352,
+    "psnr": 22.588513,
+    "ssim": 0.646747,
+    "lpips": 0.310647
+  },
+  "track2_val_at_epoch_5": {
+    "psnr": 22.882909,
+    "ssim": 0.641485,
+    "epoch": 5
+  },
+  "track2_train_peak_mib": 403.62,
+  "track2_refiner_parameters": 84465,
+  "track2_train_rows_sharing_test_clean_reference_sha256": 399,
+  "track1_train_rows_sharing_test_clean_reference_sha256": 0,
+  "refiner_checkpoint_sha256": "8e89e10a24ee1a6e4ee732fab334d372d001ade11650e0511ec2f94d28307ec8"
+}

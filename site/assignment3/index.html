@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore measured single-image dehazing results from ROAS5800 Assignment 3 and reproduce the PG-FNO Side-Refiner locally.">
+  <meta name="theme-color" content="#f4f7f4">
+  <title>Physics-Guided Image Dehazing · ROAS5800</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="hw3.css">
+  <script src="hw3.js" defer></script>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="course" href="../"><span aria-hidden="true" class="course-mark"></span>ROAS5800</a>
+    <nav aria-label="On this page"><a href="#demo">Demo</a><a href="#results">Results</a><a href="#reproduce">Reproduce</a></nav>
+  </header>
+  <main class="wrap">
+    <header class="intro">
+      <div>
+        <p class="eyebrow">Assignment 3 <span aria-hidden="true">/</span> Yi Zhang</p>
+        <h1>Physics-guided image dehazing</h1>
+        <p class="lede">A Fourier Side-Refiner for PGL-Net-T. Explore what changes when a lightweight residual model is added to a frozen restoration backbone.</p>
+      </div>
+      <a class="button" href="#reproduce">Run the model locally</a>
+    </header>
+
+    <section id="demo" class="demo" aria-labelledby="demo-title">
+      <div class="section-top">
+        <div><h2 id="demo-title">Compare dehazing outputs</h2><p>Drag the divider or use the arrow keys. The browser displays compressed copies of saved GPU outputs.</p></div>
+        <div class="compare-controls">
+          <label for="compare-mode">Compare with</label>
+          <select id="compare-mode">
+            <option value="input">Hazy input</option>
+            <option value="base">Frozen PGL-Net-T</option>
+            <option value="reference">Clean reference</option>
+          </select>
+        </div>
+      </div>
+      <div class="demo-grid">
+        <figure class="viewer">
+          <div class="frame" id="comparison">
+            <img id="right-image" src="samples/12-0002-05/refiner.webp" alt="PG-FNO Side-Refiner output" width="640" height="512" fetchpriority="high">
+            <img id="left-image" class="left-image" src="../assignment2/samples/12-0002-05/input.png" alt="Hazy input" width="640" height="512" fetchpriority="high">
+            <span class="image-label left-label" id="left-label">Hazy input</span>
+            <span class="image-label right-label">Side-Refiner</span>
+            <div class="compare-line" aria-hidden="true"><span>‹  ›</span></div>
+            <input id="divider" type="range" min="0" max="100" value="50" aria-label="Image comparison divider">
+          </div>
+          <figcaption><span id="sample-info" aria-live="polite">RW²AH · 12-0002-05 · 640 × 512</span><a id="download-output" href="samples/12-0002-05/refiner.webp" download>Download restored image</a></figcaption>
+        </figure>
+        <aside class="sample-panel">
+          <h3>Test scenes</h3>
+          <div class="samples" id="sample-list" aria-label="Choose a test scene"></div>
+          <noscript><p>Enable JavaScript to switch the scene and move the divider.</p></noscript>
+          <p class="status" id="demo-status" role="status" hidden></p>
+          <h3>Selected scene scores</h3>
+          <table class="scene-table">
+            <thead><tr><th scope="col">Image</th><th scope="col">PSNR</th><th scope="col">SSIM</th></tr></thead>
+            <tbody id="scene-scores">
+              <tr><th scope="row">Hazy input</th><td>22.8563</td><td>0.8234</td></tr>
+              <tr><th scope="row">Frozen base</th><td>26.4835</td><td>0.8501</td></tr>
+              <tr><th scope="row">Side-Refiner</th><td>26.4327</td><td>0.8501</td></tr>
+            </tbody>
+          </table>
+          <p class="small">Against the aligned clean reference. PSNR is shown in dB.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-grid" id="results" aria-label="Method and evaluation">
+      <article class="panel">
+        <h2>How the refiner works</h2>
+        <ol class="method">
+          <li><strong>Restore.</strong> PGL-Net-T predicts the first clear image. The main network stays frozen.</li>
+          <li><strong>Read features.</strong> Hooks read the H/4 and H/8 backbone features. The branch also receives the hazy input, base output, residual and a dark-channel transmission proxy.</li>
+          <li><strong>Refine.</strong> A DC/low-frequency calibrator and Fourier blocks at H/4 and H/2 predict a bounded image correction.</li>
+        </ol>
+        <p class="small">84,465 trainable refiner parameters in the released Track 2 checkpoint.</p>
+      </article>
+      <article class="panel">
+        <h2>Full test benchmark</h2>
+        <p class="small">352 RW²AH pairs · native 640 × 512 · per-image RGB metrics</p>
+        <table>
+          <thead><tr><th scope="col">Method</th><th scope="col">PSNR (dB)</th><th scope="col">SSIM</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Frozen PGL-Net-T</th><td>22.5934</td><td>0.6465</td></tr>
+            <tr><th scope="row">PGL-Net-T + geo8 TTA</th><td>22.6768</td><td>0.6507</td></tr>
+            <tr><th scope="row">Side-Refiner (Track 2)</th><td>22.5885</td><td>0.6467</td></tr>
+          </tbody>
+        </table>
+        <p>Track 2 changed mean PSNR by −0.0049 dB and mean SSIM by +0.0002 versus the frozen base. Geo8 test-time averaging had the highest scores in this table.</p>
+        <details><summary>Training overlap and validation</summary>
+          <p>Track 2 used 1,304 training pairs and 102 validation pairs. Among the 1,304 pairs, 399 share a byte-identical clear reference with the test set. The frozen backbone uses the official RW²AH checkpoint. The refiner checkpoint was selected on validation PSNR.</p>
+        </details>
+        <a class="inline-link" href="https://github.com/zhangyiCristino/ROAS5800-image-dehzing/blob/main/assignment3/results/summary.json">Benchmark record (JSON)</a>
+      </article>
+    </section>
+
+    <section class="reproduce panel" id="reproduce" aria-labelledby="repro-title">
+      <div>
+        <h2 id="repro-title">Reproduce the results</h2>
+        <p>Clone the coursework repository, prepare the original PGL-Net-T assets, then run the five-image demo or evaluate all 352 pairs. The same CLI accepts new PNGs on a local machine.</p>
+        <a class="button" href="https://github.com/zhangyiCristino/ROAS5800-image-dehzing/tree/main/assignment3#quick-start">Code and setup instructions</a>
+      </div>
+      <div class="command-box">
+        <div><span>Five-image demo · after setup</span><button type="button" id="copy-command">Copy</button></div>
+        <pre><code id="demo-command">python run_ta_test.py --mode demo --model side</code></pre>
+        <p id="copy-status" class="small" role="status"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <span>ROAS5800 · Yi Zhang</span>
+    <a href="https://github.com/fiwy0527/AAAI25_SGDN">RW²AH dataset</a>
+    <a href="https://github.com/sc-30-bit/PGL-Net">PGL-Net backbone</a>
+    <a href="../">Coursework portal</a>
+  </footer>
+</body>
+</html>

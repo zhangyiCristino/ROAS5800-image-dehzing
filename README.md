@@ -2,18 +2,19 @@
 
 **[Open the assignment portal](https://zhangyicristino.github.io/ROAS5800-image-dehzing/)**
 
-This repository keeps two coursework projects distinct, with their own methods,
+This repository keeps three coursework projects distinct, with their own methods,
 evaluation settings, reports and interactive interfaces.
 
 | Project | Methods | Local test protocol | Local application |
 |---|---|---|---|
 | [Assignment 1](#assignment-1-details) | PGL-Net-T, HNDiff-FocalNet, PixRestore-S | 352 RW2AH pairs, maximum side 512 | Original launcher, port 7860 |
 | [Assignment 2](assignment2/README.md) | SFMN, SFHformer, IPC-Dehaze | 352 RW2AH pairs, original 640×512 | `run_assignment2.ps1`, port 7861 |
+| [Assignment 3](assignment3/README.md) | PGL-Net-T + Physics-Guided Fourier Side-Refiner | 352 RW2AH pairs, original 640×512 | `assignment3/run_ta_test.py` |
 
 The [Assignment 1 website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment1.html)
-and [Assignment 2 website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment2/)
-provide actual saved comparisons, method selection, before/after sliders and ZIP
-downloads. New-image GPU inference runs in the separate local applications.
+[Assignment 2 website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment2/)
+and [Assignment 3 website](https://zhangyicristino.github.io/ROAS5800-image-dehzing/assignment3/)
+provide saved comparisons, method selection and before/after sliders. New-image inference runs locally.
 Each assignment retains its own protocol; the tables are not a controlled
 six-model leaderboard.
 

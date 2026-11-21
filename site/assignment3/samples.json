@@ -1,0 +1,97 @@
+[
+  {
+    "id": "12-0002-05",
+    "width": 640,
+    "height": 512,
+    "metrics": {
+      "input": {
+        "psnr": 22.8563,
+        "ssim": 0.8234
+      },
+      "base": {
+        "psnr": 26.4835,
+        "ssim": 0.8501
+      },
+      "refiner": {
+        "psnr": 26.4327,
+        "ssim": 0.8501
+      }
+    }
+  },
+  {
+    "id": "1-0010-02",
+    "width": 640,
+    "height": 512,
+    "metrics": {
+      "input": {
+        "psnr": 20.927,
+        "ssim": 0.6158
+      },
+      "base": {
+        "psnr": 25.6819,
+        "ssim": 0.6839
+      },
+      "refiner": {
+        "psnr": 25.6662,
+        "ssim": 0.6829
+      }
+    }
+  },
+  {
+    "id": "2-0019-03",
+    "width": 640,
+    "height": 512,
+    "metrics": {
+      "input": {
+        "psnr": 18.1695,
+        "ssim": 0.7094
+      },
+      "base": {
+        "psnr": 15.8632,
+        "ssim": 0.6581
+      },
+      "refiner": {
+        "psnr": 15.8481,
+        "ssim": 0.6586
+      }
+    }
+  },
+  {
+    "id": "4-0005-07",
+    "width": 640,
+    "height": 512,
+    "metrics": {
+      "input": {
+        "psnr": 25.9791,
+        "ssim": 0.9595
+      },
+      "base": {
+        "psnr": 36.8295,
+        "ssim": 0.9714
+      },
+      "refiner": {
+        "psnr": 36.8219,
+        "ssim": 0.9715
+      }
+    }
+  },
+  {
+    "id": "8-0016-01",
+    "width": 640,
+    "height": 512,
+    "metrics": {
+      "input": {
+        "psnr": 20.6596,
+        "ssim": 0.6638
+      },
+      "base": {
+        "psnr": 24.4992,
+        "ssim": 0.7122
+      },
+      "refiner": {
+        "psnr": 24.6163,
+        "ssim": 0.7139
+      }
+    }
+  }
+]

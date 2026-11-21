@@ -1,0 +1,10 @@
+/third_party/
+/data/
+/cache/
+/sample_hazy_5imgs/
+/ta_demo_out/
+/outputs/
+/checkpoints/*
+!/checkpoints/side_refiner_track2/
+/checkpoints/side_refiner_track2/*
+!/checkpoints/side_refiner_track2/best_val_ema.pth
